@@ -8,7 +8,7 @@
 
 ### Slide 0: Opening Tribute
 - **Chapter Intro**: A LIFE HONOURED
-- **Summary Text**: Welcome to the Celebration of Life for Patrick Weldon Bray. Born November 17th, 1932 on the rugged shores of Port Morien, and peacefully passing on April 28th, 2026, his ninety-three years were a testament to faith, family, and the steady work of his hands. He was a fisherman, a master carpenter, and a beloved teacher. But his greatest legacy was his family. Alongside his true love, Mary, he raised 8 children, who in turn blessed him with 27 grandchildren and 15 great-grandchildren. Today, we gather to share our cherished memories, to celebrate his profound impact on our lives, and to honour the story of a life lived fully by the sea.
+- **Summary Text**: Patrick Weldon Bray, born on November 17th, 1932, passed away on April 28th, 2026. Throughout his life, he was a dedicated fisherman, carpenter, and teacher who committed himself to his community and his craft. His greatest legacy, however, remains his family; he was a father of eight, a granddad to 27, and a great-granddad to 15. This is the story of 93 years lived fully, faithfully, and for his family.
 
 ### Slide 1
 - **Title**: Pat was born into the rugged beauty of Port Morien.
