@@ -152,8 +152,54 @@
     }
 
     .form-group textarea {
-      height: 150px;
+      height: 120px;
       resize: none;
+    }
+
+    .form-group .file-input-wrapper {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .file-btn {
+      border: 1px dashed var(--vintage-gold);
+      color: var(--vintage-sage);
+      background-color: var(--vintage-bg);
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: block;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .file-btn:hover {
+      background: #eee;
+    }
+
+    .preview-img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+
+    .message-photo {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .message-photo:hover {
+      transform: scale(1.02);
     }
 
     .submit-btn {
@@ -281,6 +327,15 @@
         <label>Message</label>
         <textarea id="gb-message" placeholder="Share your memory here..." required></textarea>
       </div>
+
+      <div class="form-group">
+        <label>Attach a Photo (Optional)</label>
+        <div class="file-input-wrapper">
+          <input type="file" id="gb-photo" accept="image/*" style="display: none;" onchange="previewImage(this)">
+          <div class="file-btn" onclick="document.getElementById('gb-photo').click()">Click to select a photo</div>
+        </div>
+        <img id="image-preview" class="preview-img">
+      </div>
       
       <button class="submit-btn" onclick="submitMessage()">Sign Guestbook</button>
       <div id="status-msg" class="status-msg"></div>
@@ -330,6 +385,21 @@
       renderMessages(data);
     }
 
+    function previewImage(input) {
+      const preview = document.getElementById('image-preview');
+      if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+        }
+        reader.readAsDataURL(input.files[0]);
+      } else {
+        preview.src = '';
+        preview.style.display = 'none';
+      }
+    }
+
     function renderMessages(messages) {
       const list = document.getElementById('messages-list');
       list.innerHTML = '';
@@ -344,7 +414,14 @@
         
         const card = document.createElement('div');
         card.className = 'message-card';
+        
+        let photoHTML = '';
+        if (msg.photo_url) {
+          photoHTML = `<img src="${msg.photo_url}" class="message-photo" onclick="window.open('${msg.photo_url}', '_blank')">`;
+        }
+
         card.innerHTML = `
+          ${photoHTML}
           <div class="message-text">${escapeHTML(msg.message)}</div>
           <div class="message-author">${escapeHTML(msg.name)}</div>
           <div class="message-meta">${msg.relationship ? escapeHTML(msg.relationship) + ' • ' : ''}${date}</div>
@@ -362,6 +439,7 @@
       const name = document.getElementById('gb-name').value.trim();
       const relation = document.getElementById('gb-relation').value.trim();
       const message = document.getElementById('gb-message').value.trim();
+      const photoFile = document.getElementById('gb-photo').files[0];
       const statusEl = document.getElementById('status-msg');
 
       if (!name || !message) {
@@ -373,13 +451,37 @@
       statusEl.innerText = "Submitting...";
       statusEl.style.color = "var(--vintage-sage)";
 
+      let photoUrl = null;
+      if (photoFile) {
+        const fileExt = photoFile.name.split('.').pop();
+        const fileName = `${Math.random()}.${fileExt}`;
+        const filePath = `uploads/${fileName}`;
+
+        const { error: uploadError, data: uploadData } = await supabaseClient.storage
+          .from('guestbook-photos')
+          .upload(filePath, photoFile);
+
+        if (uploadError) {
+          console.error("Upload error:", uploadError);
+          statusEl.innerText = "Error uploading photo. Make sure the 'guestbook-photos' bucket exists.";
+          statusEl.style.color = "red";
+          return;
+        }
+
+        const { data: publicData } = supabaseClient.storage
+          .from('guestbook-photos')
+          .getPublicUrl(filePath);
+        
+        photoUrl = publicData.publicUrl;
+      }
+
       const { error } = await supabaseClient
         .from('guestbook')
-        .insert([{ name: name, relationship: relation, message: message }]);
+        .insert([{ name: name, relationship: relation, message: message, photo_url: photoUrl }]);
 
       if (error) {
         console.error("Error inserting message:", error);
-        statusEl.innerText = "An error occurred. Check if the table exists in Supabase.";
+        statusEl.innerText = "An error occurred. Check if the 'photo_url' column exists.";
         statusEl.style.color = "red";
       } else {
         statusEl.innerText = "Thank you! Your memory has been added.";
@@ -389,6 +491,8 @@
         document.getElementById('gb-name').value = '';
         document.getElementById('gb-relation').value = '';
         document.getElementById('gb-message').value = '';
+        document.getElementById('gb-photo').value = '';
+        document.getElementById('image-preview').style.display = 'none';
         
         // Refresh messages
         fetchMessages();
