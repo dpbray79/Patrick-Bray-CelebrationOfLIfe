@@ -144,19 +144,16 @@
       height: 100%;
       background: var(--vintage-bg);
       z-index: 5000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 1s ease-out;
+      display: block;
       overflow-y: auto;
-      padding: 40px 0;
+      transition: opacity 1s ease-out;
     }
 
     .landing-content {
       text-align: center;
       max-width: 1000px;
-      padding: 40px;
+      margin: 0 auto;
+      padding: 100px 40px;
     }
 
     .landing-content img {
@@ -762,11 +759,12 @@
             slides.push({ ch: chData.label, type: 'content' });
           }
         });
-        update();
-      } catch (err) {
-        console.error("Slideshow init error:", err);
-      }
+      });
+      update();
+    } catch (err) {
+      console.error("Slideshow init error:", err);
     }
+  }
 
     function update() {
       if (!slides || slides.length === 0 || !slides[cur]) return;

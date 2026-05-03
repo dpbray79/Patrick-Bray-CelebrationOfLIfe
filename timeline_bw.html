@@ -531,8 +531,10 @@
     }
 
     async function init() {
-      const resp = await fetch('patrick_bray_slideshow_workplan.html');
-      const html = await resp.text();
+      try {
+        const resp = await fetch('patrick_bray_slideshow_workplan.html');
+        if (!resp.ok) throw new Error('Failed to load workplan');
+        const html = await resp.text();
       const doc = new DOMParser().parseFromString(html, 'text/html');
       const stage = document.getElementById('stage');
       const chapters = doc.querySelectorAll('.chapter-block');
@@ -618,11 +620,15 @@
         });
       });
       update();
+    } catch (err) {
+      console.error("Slideshow init error:", err);
     }
+  }
 
     function update() {
-      document.getElementById('counter').innerText = `${cur+1} / ${slides.length}`;
-      document.getElementById('chapter-name').innerText = slides[cur].ch;
+      if (!slides || slides.length === 0 || !slides[cur]) return;
+      document.getElementById('counter').innerText = `${cur + 1} / ${slides.length}`;
+      document.getElementById('chapter-name').innerText = slides[cur].ch || "A LIFE HONOURED";
     }
 
     function show(idx) {
