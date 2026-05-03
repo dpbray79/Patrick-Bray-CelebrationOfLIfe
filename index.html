@@ -541,6 +541,10 @@
 
 <body>
 
+  <audio id="bgMusic" loop>
+    <source src="soundtrack.mp3" type="audio/mpeg">
+  </audio>
+
   <div id="landing-page">
     <div class="landing-content">
       <img src="cover_photo.jpg" alt="Patrick Weldon Bray">
@@ -581,6 +585,7 @@
       <button class="btn" onclick="next()">Next</button>
     </div>
     <div class="controls">
+      <button class="btn" id="muteBtn" onclick="toggleMute()">Mute</button>
       <button class="btn" onclick="window.location.href='guestbook.html'">Guestbook</button>
       <button class="btn" onclick="toggleFS()">Fullscreen</button>
     </div>
@@ -649,6 +654,9 @@
     };
 
     function startShow() {
+      const music = document.getElementById('bgMusic');
+      if (music) music.play().catch(e => console.log("Audio play blocked", e));
+
       document.getElementById('landing-page').style.opacity = '0';
       setTimeout(() => {
         document.getElementById('landing-page').style.display = 'none';
@@ -657,6 +665,13 @@
         start();
         if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
       }, 1000);
+    }
+
+    function toggleMute() {
+      const music = document.getElementById('bgMusic');
+      if (!music) return;
+      music.muted = !music.muted;
+      document.getElementById('muteBtn').innerText = music.muted ? 'Unmute' : 'Mute';
     }
 
     function returnToCover() {
