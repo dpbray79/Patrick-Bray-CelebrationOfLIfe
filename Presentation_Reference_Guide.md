@@ -16,6 +16,12 @@
 - **Narrative**: Patrick Weldon Bray was born into the salt air of Port Morien, Cape Breton, on November 17, 1932. He was the son of John Francis Bray and Agnes Euphemia Bray (Kanary), the beginning of a ninety-three-year journey defined by the sea and the steady work of his hands.
 - **Photos**: port_morien_sign.jpg, port_morien_map.jpg
 
+### Slide 2
+- **Title**: Born on the shores of Port Morien, Cape Breton.
+- **Subtitle**: Port Morien, Cape Breton · November 17, 1932
+- **Narrative**: Patrick Weldon Bray was born into the salt air of Port Morien on November 17th, 1932. Son of John Francis Bray — 'Papa' — a coal miner, and Agnes Euphemia (Kanary). Port Morien was home to the first coal mine in North America, and its shores and spirit shaped everything Pat would become.
+- **Photos**: None
+
 ### Slide 3
 - **Title**: A life rich in family, faith, and the sea.
 - **Subtitle**: Patrick Weldon Bray | Family Overview
