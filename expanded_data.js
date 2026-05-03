@@ -41,9 +41,10 @@ const expandedNarratives = {
     "story": "In the summer of 1956, everything changed. Pat found the woman he would fall in love with and stay in love with for the next seventy years—Mary Alexandra McNeil."
   },
   "11": {
-    "title": "He became a husband of almost 70 years on a summer day in 1956.",
+    "title": "He became a husband on July 17th, 1956.",
     "subtitle": "Wedding Day | St. John's Church, New Aberdeen | July 17, 1956",
-    "story": "On a Tuesday in July, they exchanged vows at St. John's Church in New Aberdeen, Glace Bay. It was the first day of a shared life that would eventually span eight children and nearly seven decades."
+    "story": "On a Tuesday in July, they exchanged vows at St. John's Church in New Aberdeen, Glace Bay. It was the first day of a shared life that would eventually span eight children and nearly seven decades.",
+    "images": ["Timeline Photos/extracted/ppt/media/image17.jpg", "Timeline Photos/extracted/ppt/media/image26.jpg", "Timeline Photos/extracted/ppt/media/image12.jpg"]
   },
   "12": {
     "title": "He remained a devoted husband through every milestone.",

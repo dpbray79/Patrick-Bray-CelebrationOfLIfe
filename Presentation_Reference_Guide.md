@@ -59,10 +59,10 @@
 - **Photos**: None
 
 ### Slide 11
-- **Title**: He became a husband of almost 70 years on a summer day in 1956.
+- **Title**: He became a husband on July 17th, 1956.
 - **Subtitle**: Wedding Day | St. John's Church, New Aberdeen | July 17, 1956
 - **Narrative**: On a Tuesday in July, they exchanged vows at St. John's Church in New Aberdeen, Glace Bay. It was the first day of a shared life that would eventually span eight children and nearly seven decades.
-- **Photos**: None
+- **Photos**: Timeline Photos/extracted/ppt/media/image17.jpg, Timeline Photos/extracted/ppt/media/image26.jpg, Timeline Photos/extracted/ppt/media/image12.jpg
 
 ### Slide 12
 - **Title**: He remained a devoted husband through every milestone.

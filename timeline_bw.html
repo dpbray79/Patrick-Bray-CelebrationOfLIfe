@@ -188,12 +188,61 @@
     .visual-frame img {
       max-width: 48%;
       max-height: 94%;
-      object-fit: contain; 
-      box-shadow: inset 0 0 100px rgba(0,0,0,0.3), 0 40px 100px rgba(0,0,0,0.1);
+      object-fit: contain;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1);
       background: white;
       padding: 12px;
       flex: 1;
       min-width: 0;
+    }
+
+    /* Custom Triangle Collage for Wedding Slide */
+    .triangle-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .triangle-container img {
+      position: absolute !important;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3) !important;
+      padding: 12px;
+      background: white;
+      flex: none !important;
+      object-fit: contain;
+    }
+
+    .triangle-container img:nth-child(1) {
+      /* Top Center */
+      top: 0%;
+      left: 20%;
+      max-width: 55%;
+      max-height: 55%;
+      transform: rotate(-4deg);
+      z-index: 1;
+    }
+
+    .triangle-container img:nth-child(2) {
+      /* Bottom Left */
+      bottom: 2%;
+      left: 0%;
+      max-width: 50%;
+      max-height: 50%;
+      transform: rotate(6deg);
+      z-index: 2;
+    }
+
+    .triangle-container img:nth-child(3) {
+      /* Bottom Right */
+      bottom: 5%;
+      right: 0%;
+      max-width: 50%;
+      max-height: 50%;
+      transform: rotate(-5deg);
+      z-index: 3;
+    }
+
+    .visual-frame img {
       filter: grayscale(100%) sepia(0.15) contrast(1.15) brightness(1.05);
     }
 
@@ -473,9 +522,14 @@
             let imgTags = chunk.map(src => `<img src="${src}">`).join('');
             if (chunk.length === 0) imgTags = `<div style="background: #222; width: 100%; height: 100%;"></div>`;
 
+            let frameContent = imgTags;
+            if (num === "11") {
+              frameContent = `<div class="triangle-container">${imgTags}</div>`;
+            }
+
             el.innerHTML = `
               <div class="visual-frame">
-                ${imgTags}
+                ${frameContent}
               </div>
               <div class="story-overlay">
                 <div class="photo-caption">${subtitle}${isCont ? ' (continued)' : ''}</div>
