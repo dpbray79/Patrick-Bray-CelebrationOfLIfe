@@ -3,7 +3,7 @@ const expandedNarratives = {
     "title": "Born on the shores of Port Morien, Cape Breton.",
     "subtitle": "Patrick Weldon Bray | Port Morien, Cape Breton | Nov 17, 1932",
     "story": "Patrick Weldon Bray was born into the salt air of Port Morien on November 17th, 1932. He was the son of John Francis Bray — 'Papa' — a coal miner, and Agnes Euphemia (Kanary). Port Morien was home to the first coal mine in North America, and its shores and spirit shaped everything Pat would become.",
-    "images": ["port_morien_sign.jpg", "image13.png", "image15.jpg"]
+    "images": ["port_morien_sign.jpg", "Timeline Photos/extracted/ppt/media/image13.png", "Timeline Photos/extracted/ppt/media/image15.jpg"]
   },
   "4": {
     "title": "His journey spanned nine decades of dedication and growth.",
