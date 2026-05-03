@@ -331,8 +331,8 @@
       <div class="form-group">
         <label>Attach a Photo (Optional)</label>
         <div class="file-input-wrapper">
-          <input type="file" id="gb-photo" accept="image/*" style="display: none;" onchange="previewImage(this)">
-          <div class="file-btn" onclick="document.getElementById('gb-photo').click()">Click to select a photo</div>
+          <input type="file" id="gb-photo" accept="image/*" capture="environment" style="display: none;" onchange="previewImage(this)">
+          <div class="file-btn" onclick="document.getElementById('gb-photo').click()">📸 Take a Photo or Select from Gallery</div>
         </div>
         <img id="image-preview" class="preview-img">
       </div>
