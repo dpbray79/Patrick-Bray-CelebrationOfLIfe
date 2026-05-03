@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Patrick Weldon Bray - A Life Honoured (B&W Edition)</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
@@ -332,10 +333,72 @@
     }
 
     @media (max-width: 1300px) {
-      .top-bar { grid-template-columns: 1fr 1fr; }
+      .top-bar { grid-template-columns: 1fr auto; }
       .top-bar .main-title { display: none; }
       .visual-frame { padding: 20px !important; }
       .story-overlay { width: 90%; left: 5% !important; bottom: 20px; padding: 20px; min-width: 0; }
+    }
+
+    /* Mobile Devices */
+    @media (max-width: 900px) {
+      .top-bar {
+        padding: 0 20px;
+        height: 50px;
+      }
+      .top-bar .name-brand { font-size: 0.7rem; }
+      #chapter-name { font-size: 0.8rem; }
+
+      .bottom-bar {
+        height: auto;
+        padding: 10px 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+      .bottom-bar .left-group, .bottom-bar .controls {
+        flex: 1 1 100%;
+        justify-content: center;
+      }
+
+      .slide {
+        flex-direction: column !important;
+      }
+      .visual-frame {
+        height: 50% !important;
+        width: 100% !important;
+        padding: 20px !important;
+        padding-bottom: 0 !important;
+      }
+      .visual-frame img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+      .story-overlay {
+        position: relative !important;
+        width: 100% !important;
+        height: 50% !important;
+        left: 0 !important;
+        bottom: 0 !important;
+        border-radius: 0 !important;
+        padding: 25px !important;
+        background: var(--overlay-bg) !important;
+        overflow-y: auto;
+      }
+      
+      .intro-title { font-size: 1.4rem; }
+      .info-section { font-size: 0.95rem; line-height: 1.5; }
+      
+      .landing-content img {
+        width: 70%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+      .landing-content h2 {
+        font-size: 2.2rem;
+      }
+      .landing-pre {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
