@@ -1,0 +1,758 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.header {
+  background: #1a2e1a;
+  padding: 18px 24px 14px;
+  border-radius: 10px 10px 0 0;
+}
+.header-title { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #9ab09a; margin-bottom: 4px; }
+.header-main { font-size: 20px; font-weight: 500; color: #e8d5a0; }
+.header-sub { font-size: 12px; color: #9ab09a; margin-top: 4px; }
+
+.chapter-block {
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  padding: 0;
+}
+.chapter-header {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--color-background-secondary);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.chapter-num {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  min-width: 40px;
+}
+.chapter-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  flex: 1;
+}
+.chapter-count {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  background: var(--color-background-secondary);
+  border: 0.5px solid var(--color-border-secondary);
+  border-radius: 20px;
+  padding: 2px 10px;
+}
+
+.slides-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.slides-table th {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  text-align: left;
+  padding: 8px 20px;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  background: var(--color-background-primary);
+}
+.slides-table th:nth-child(1) { width: 56px; }
+.slides-table th:nth-child(2) { width: 180px; }
+.slides-table th:nth-child(3) { }
+.slides-table th:nth-child(4) { width: 100px; }
+.slides-table th:nth-child(5) { width: 90px; }
+
+.slides-table td {
+  font-size: 12px;
+  color: var(--color-text-primary);
+  padding: 8px 20px;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.slides-table tr:last-child td { border-bottom: none; }
+
+.slide-num {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.slide-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+.slide-content {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+}
+.slide-photos {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+}
+.badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+.badge-sky { background: #e6f1fb; color: #185fa5; }
+.badge-paper { background: #faeeda; color: #854f0b; }
+.badge-dark { background: #d3d1c7; color: #444441; }
+
+.legend {
+  display: flex;
+  gap: 16px;
+  padding: 10px 20px;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  background: var(--color-background-secondary);
+}
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--color-text-secondary); }
+.legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.stat { padding: 12px 20px; border-right: 0.5px solid var(--color-border-tertiary); }
+.stat:last-child { border-right: none; }
+.stat-num { font-size: 22px; font-weight: 500; color: var(--color-text-primary); }
+.stat-lbl { font-size: 10px; color: var(--color-text-secondary); margin-top: 2px; }
+</style>
+
+<div class="header">
+  <div class="header-title">Celebration of life · Slide workplan</div>
+  <div class="header-main">Patrick Weldon Bray</div>
+  <div class="header-sub">Joe Norris folk art style · Port Morien, Cape Breton · November 17, 1932 – April 28, 2026</div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">66</div><div class="stat-lbl">Total slides</div></div>
+  <div class="stat"><div class="stat-num">155</div><div class="stat-lbl">Family photos used</div></div>
+  <div class="stat"><div class="stat-num">11</div><div class="stat-lbl">Life chapters</div></div>
+  <div class="stat"><div class="stat-num">93</div><div class="stat-lbl">Years of life honoured</div></div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#e6f1fb; border: 0.5px solid #185fa5;"></div>Norris sky scene bg</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#faeeda; border: 0.5px solid #854f0b;"></div>Aged paper bg</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#d3d1c7; border: 0.5px solid #444441;"></div>Dark/neutral bg</div>
+</div>
+
+<div class="chapter-block">
+  <div class="chapter-header">
+    <span class="chapter-num">Ch. 1</span>
+    <span class="chapter-name">Opening</span>
+    <span class="chapter-count">Slides 1–2</span>
+  </div>
+  <table class="slides-table">
+    <thead><tr><th>Slide</th><th>Title</th><th>Content / text</th><th>Photos</th><th>Style</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="slide-num">1</td>
+        <td class="slide-title">Title slide</td>
+        <td class="slide-content">CELEBRATION OF THE LIFE OF · Patrick Weldon Bray · November 17th, 1932 – April 28, 2026 · Port Morien, Cape Breton · Fisherman · Carpenter · Father</td>
+        <td class="slide-photos">image7.jpg<br>(harbour bg, 60% transparent)</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">2</td>
+        <td class="slide-title">Family overview</td>
+        <td class="slide-content">PATRICK WELDON BRAY · Son · Brother · Husband · Father · Grandfather · Great-Grandfather · 8 Children · 27 Grandchildren · 15 Great-Grandchildren · "A life rich in family, faith, and the sea." · Port Morien · Cape Breton · 1932–2026</td>
+        <td class="slide-photos">image9.png<br>(family tree ×2, flanking)</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="chapter-block">
+  <div class="chapter-header">
+    <span class="chapter-num">Ch. 2</span>
+    <span class="chapter-name">Son — parents &amp; origins</span>
+    <span class="chapter-count">Slides 3–9</span>
+  </div>
+  <table class="slides-table">
+    <thead><tr><th>Slide</th><th>Title</th><th>Content / text</th><th>Photos</th><th>Style</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="slide-num">3</td>
+        <td class="slide-title">Son</td>
+        <td class="slide-content">PORT MORIEN · CAPE BRETON · SON · Father — John Francis Bray (Papa) · Mother — Agnes Euphemia Bray (Kanary)</td>
+        <td class="slide-photos">image13.png<br>image15.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">4</td>
+        <td class="slide-title">Over the years</td>
+        <td class="slide-content">A LIFE IN PICTURES · Over the Years · Grade 5 or 6 — about age 12 · Dad — 89 years old · The Graduate</td>
+        <td class="slide-photos">image2.png<br>image10.jpg<br>image3.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">5</td>
+        <td class="slide-title">Brother</td>
+        <td class="slide-content">FAMILY · BROTHER · Dad (Pat), Papa &amp; Thomas · All the Boys: Dad, Thomas, George, Art and Bill</td>
+        <td class="slide-photos">image8.png<br>image1.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">6</td>
+        <td class="slide-title">Brothers and sisters</td>
+        <td class="slide-content">FAMILY · AROUND 1952 · Brothers and Sisters · (Back L-R): Gerald, Art, Thomas (Center): Mary, Carmel, George, Pat (Front): Bill, Papa, Frank · (L-R): Gerald, Art, Thomas, Mary, Dad (Pat), Carmel, Frank, Bill</td>
+        <td class="slide-photos">image14.png<br>image6.png</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">7</td>
+        <td class="slide-title">Brother and sister</td>
+        <td class="slide-content">CAPE BRETON · Brother and Sister · Dad and Carmel — Cape Breton</td>
+        <td class="slide-photos">image19.png</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">8</td>
+        <td class="slide-title">Where I came from</td>
+        <td class="slide-content">WHERE I CAME FROM · Arthur's Store — Morien · 1st Homestead — Peach Street, Port Morien (lived in until early 1950s) · 90 Breakwater St., Port Morien (moved into early 1950s) · "The shores of Port Morien shaped every generation of this family."</td>
+        <td class="slide-photos">image4.jpg<br>image21.png<br>image5.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">9</td>
+        <td class="slide-title">Morien friends</td>
+        <td class="slide-content">PORT MORIEN · Morien Friends · Jimmy Murrant, Percy Murrant, Arthur Murrant, Eddie Murrant · Pat Bray, Lloyd Lesslie · Three Amigos: Pat and Thomas Bray with Eddie Murrant</td>
+        <td class="slide-photos">image16.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="chapter-block">
+  <div class="chapter-header">
+    <span class="chapter-num">Ch. 3</span>
+    <span class="chapter-name">Husband — almost 70 years</span>
+    <span class="chapter-count">Slides 10–17</span>
+  </div>
+  <table class="slides-table">
+    <thead><tr><th>Slide</th><th>Title</th><th>Content / text</th><th>Photos</th><th>Style</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="slide-num">10</td>
+        <td class="slide-title">Husband</td>
+        <td class="slide-content">ALMOST 70 YEARS · HUSBAND · "The woman I fell in love with!"</td>
+        <td class="slide-photos">image22.jpg<br>image20.jpg<br>image11.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">11</td>
+        <td class="slide-title">Our wedding</td>
+        <td class="slide-content">TUESDAY JULY 17, 1956 · OUR WEDDING · St. John's Church · New Aberdeen · Glace Bay, N.S. · The wedding invitation</td>
+        <td class="slide-photos">image17.jpg<br>image26.jpg<br>image12.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">12</td>
+        <td class="slide-title">Anniversaries</td>
+        <td class="slide-content">ANNIVERSARIES · 1981 — 25 Years · 2001 — 50 Years · 2016 — 60 Years</td>
+        <td class="slide-photos">image32.jpg<br>image140.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">13</td>
+        <td class="slide-title">65 years</td>
+        <td class="slide-content">2022 · 65 YEARS · Together</td>
+        <td class="slide-photos">image27.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">14</td>
+        <td class="slide-title">The couple</td>
+        <td class="slide-content">A LOVE STORY · THE COUPLE</td>
+        <td class="slide-photos">image31.png<br>image18.jpg<br>image29.png<br>image36.png</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">15</td>
+        <td class="slide-title">The couple (ii)</td>
+        <td class="slide-content">[Photo-only slide — two large portraits of the couple]</td>
+        <td class="slide-photos">image28.jpg<br>image30.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">16</td>
+        <td class="slide-title">The couple (iii)</td>
+        <td class="slide-content">[Photo-only slide — two portraits side by side]</td>
+        <td class="slide-photos">image24.jpg<br>image11.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">17</td>
+        <td class="slide-title">Mom's 90th birthday</td>
+        <td class="slide-content">JULY 2025 · JAY'S PT. COTTAGE · Mom's 90th Birthday</td>
+        <td class="slide-photos">image61.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="chapter-block">
+  <div class="chapter-header">
+    <span class="chapter-num">Ch. 4</span>
+    <span class="chapter-name">Father — the children</span>
+    <span class="chapter-count">Slides 18–26</span>
+  </div>
+  <table class="slides-table">
+    <thead><tr><th>Slide</th><th>Title</th><th>Content / text</th><th>Photos</th><th>Style</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="slide-num">18</td>
+        <td class="slide-title">Father</td>
+        <td class="slide-content">FAMILY · FATHER · Dad and Mom with Patricia · Dad, Patricia, Rick and Karen · Dad's Aunt Ruth, Dad and Patricia</td>
+        <td class="slide-photos">image35.png<br>image34.jpg<br>image25.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">19</td>
+        <td class="slide-title">First communions</td>
+        <td class="slide-content">FAITH &amp; FAMILY · First Communions · Mom, Dad, Ronnie — 1st Communion · Mom, Dad, Sheldon — 1st Communion</td>
+        <td class="slide-photos">image38.png<br>image48.png</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">20</td>
+        <td class="slide-title">Growing up</td>
+        <td class="slide-content">THE CHILDREN · Growing Up · Dad, Sheldon, Mom · Dad and Robert · Dad and Paula · Patricia to John — 1966 · L-R: Sheldon, Dad, Ronnie</td>
+        <td class="slide-photos">image43.png · image41.png<br>image46.jpg · image39.jpg<br>image33.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">21</td>
+        <td class="slide-title">The boys</td>
+        <td class="slide-content">BOULARDERIE · CAPE BRETON · The Boys · "Robert's Shed" · (L-R): Ronnie, John, Sheldon, Dad, Rick · Cousin Mike's Funeral: (L-R) Robert, Andrew, Sheldon, Ronnie, John, Dad</td>
+        <td class="slide-photos">image45.png<br>image47.png</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">22</td>
+        <td class="slide-title">Family — 1969</td>
+        <td class="slide-content">1969 · HALIFAX · FAMILY · Sheldon's Christening — (Back L-R): Ronnie, Dad, Rick, Patricia, Karen (Front): Robert, Mom holding Sheldon, John, Paula · (Back): Mom, Patricia, Rick, Karen, Dad (Middle): Robert, John, Paula (Front): Ronnie &amp; Sheldon</td>
+        <td class="slide-photos">image55.png<br>image42.png</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">23</td>
+        <td class="slide-title">Family — July 1982</td>
+        <td class="slide-content">JULY 1982 · 50TH WEDDING ANNIVERSARY · FAMILY · Jay's Pt. Cottage · (Back L-R): John, Karen, Ronnie, Robert, Sheldon, Patricia, Paula, Rick — Mom and Dad</td>
+        <td class="slide-photos">image49.png<br>image53.png<br>image54.png</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">24</td>
+        <td class="slide-title">Family camping</td>
+        <td class="slide-content">SUMMER ADVENTURES · FAMILY CAMPING</td>
+        <td class="slide-photos">image37.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">25</td>
+        <td class="slide-title">Summer swims</td>
+        <td class="slide-content">CAPE BRETON WATERS · SUMMER SWIMS</td>
+        <td class="slide-photos">image44.png<br>image50.png</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">26</td>
+        <td class="slide-title">Family homes</td>
+        <td class="slide-content">ACROSS THE YEARS · FAMILY HOMES · Third Street, New Aberdeen · Alexander Street, Glace Bay (moved out August 1986) · 6914 Vaughan Ave, Halifax (August 1968)</td>
+        <td class="slide-photos">image40.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="chapter-block">
+  <div class="chapter-header">
+    <span class="chapter-num">Ch. 5</span>
+    <span class="chapter-name">Grandfather &amp; great-grandfather</span>
+    <span class="chapter-count">Slides 27–38</span>
+  </div>
+  <table class="slides-table">
+    <thead><tr><th>Slide</th><th>Title</th><th>Content / text</th><th>Photos</th><th>Style</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="slide-num">27</td>
+        <td class="slide-title">Grandfather</td>
+        <td class="slide-content">THREE GENERATIONS · Grandfather &amp; Great-Grandfather · Granddad &amp; Grandson James · Grandad and Great-Grandson James · Granddad and Granddaughter Michelle</td>
+        <td class="slide-photos">image56.png<br>image77.jpg<br>image65.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">28</td>
+        <td class="slide-title">Granddad!</td>
+        <td class="slide-content">Granddad! [full-width photo trio]</td>
+        <td class="slide-photos">image73.png<br>image63.png<br>image52.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">29</td>
+        <td class="slide-title">Grandad's girls</td>
+        <td class="slide-content">FAMILY · Grandad's Girls · Grandad and Jennifer · Grandad and Great-Granddaughter Monica · Grandad and Monique</td>
+        <td class="slide-photos">image58.jpg<br>image67.jpg<br>image70.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">30</td>
+        <td class="slide-title">Gathered together</td>
+        <td class="slide-content">MILESTONES · Gathered Together · 50th Wedding Anniversary — Jay's Pt. — Mom, Dad, Grandchildren and Great-Grandchildren · Dad's 85th Birthday — With Great-Grandchildren</td>
+        <td class="slide-photos">image51.png<br>image71.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">31</td>
+        <td class="slide-title">Samantha, Dad, Alice</td>
+        <td class="slide-content">Samantha, Dad and Alice [full-bleed]</td>
+        <td class="slide-photos">image64.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">32</td>
+        <td class="slide-title">Grandsons</td>
+        <td class="slide-content">FAMILY · GRANDSONS · Dad, Liam and Rick · Granddad and Stephen · Grandad and Jonathan</td>
+        <td class="slide-photos">image62.jpg<br>image59.jpg<br>image63.png</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">33</td>
+        <td class="slide-title">Grandchildren</td>
+        <td class="slide-content">FAMILY · Grandchildren · Grandad and Monica · Leaf Fans: Granddad and Ryan · Grandad &amp; Ceilidh · Grandad and Samantha · Austin and Oliver</td>
+        <td class="slide-photos">image68.png · image57.png<br>image66.jpg · image46.jpg<br>image72.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">34</td>
+        <td class="slide-title">Great-grandchildren</td>
+        <td class="slide-content">LEGACY · Great-Grandchildren · Grandad and Geraldine · Grandad and Kyle</td>
+        <td class="slide-photos">image60.jpg<br>image80.jpg<br>image85.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">35</td>
+        <td class="slide-title">Family gatherings</td>
+        <td class="slide-content">CAPE BRETON SUMMERS · Family Gatherings · Lobster Feast: Granddad, James and Angus · Rhiannon, Llewyn, Grandad and Nana · Grandad, Nana, Alisha and Kalliope · Grandad, Nana and Remi</td>
+        <td class="slide-photos">image75.jpg · image84.jpg<br>image122.jpg · image83.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">36</td>
+        <td class="slide-title">Together</td>
+        <td class="slide-content">FAMILY · Together · Andrew, Dad, Mom and Paul · Grandad, James and Angus</td>
+        <td class="slide-photos">image81.png<br>image96.jpg<br>image123.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">37</td>
+        <td class="slide-title">Patrick and Patrick</td>
+        <td class="slide-content">Patrick and Patrick [photo trio]</td>
+        <td class="slide-photos">image78.jpg<br>image76.jpg<br>image74.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">38</td>
+        <td class="slide-title">Multi-generations</td>
+        <td class="slide-content">ACROSS THE GENERATIONS · Multi-Generations · Karen, Papa, Dad — Babies: Andrew and Paul · Dad, Mom, Jennifer, James · Mom, Gerard, Christine, Declan and Dad · Greg, Patricia, Sean, Jennifer, James, Mom and Dad</td>
+        <td class="slide-photos">image89.png · image86.jpg<br>image82.jpg · image79.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="chapter-block">
+  <div class="chapter-header">
+    <span class="chapter-num">Ch. 6</span>
+    <span class="chapter-name">The man himself</span>
+    <span class="chapter-count">Slides 39–50</span>
+  </div>
+  <table class="slides-table">
+    <thead><tr><th>Slide</th><th>Title</th><th>Content / text</th><th>Photos</th><th>Style</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="slide-num">39</td>
+        <td class="slide-title">Dad — the man</td>
+        <td class="slide-content">THE MAN HIMSELF · DAD · The Man · His Cat · Video Gamer — "Pac Man" · Nap Time · Dish Washer</td>
+        <td class="slide-photos">image87.png · image90.png<br>image88.png · image92.png</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">40</td>
+        <td class="slide-title">Fisherman</td>
+        <td class="slide-content">ENGLISH TOWN FERRY WHARF · FISHERMAN</td>
+        <td class="slide-photos">image94.png<br>image91.png</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">41</td>
+        <td class="slide-title">The mackerel are biting!</td>
+        <td class="slide-content">THE MACKEREL ARE BITING!</td>
+        <td class="slide-photos">image95.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">42</td>
+        <td class="slide-title">Hats!!</td>
+        <td class="slide-content">A MAN OF MANY HATS · HATS!! · "Cape Breton Steak!"</td>
+        <td class="slide-photos">image93.png<br>image101.png<br>image111.png</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">43</td>
+        <td class="slide-title">The swimmer</td>
+        <td class="slide-content">BOULARDERIE · THE SWIMMER · "Look Mary! I'm floating!!" · Hold on to the raft!</td>
+        <td class="slide-photos">image98.jpg<br>image103.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">44</td>
+        <td class="slide-title">The cook &amp; berry picker</td>
+        <td class="slide-content">CAPE BRETON LIVING · The Cook &amp; Berry Picker · Cape Breton Lobster · Berry Picker — Cranberries</td>
+        <td class="slide-photos">image109.jpg<br>image97.png</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">45</td>
+        <td class="slide-title">"Biker Man!"</td>
+        <td class="slide-content">"Biker Man!" · John and Dad</td>
+        <td class="slide-photos">image104.png</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">46</td>
+        <td class="slide-title">The boat — Alexandria</td>
+        <td class="slide-content">ON THE WATER · The Boat — "Alexandria"</td>
+        <td class="slide-photos">image138.jpg<br>image131.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">47</td>
+        <td class="slide-title">The boat (ii)</td>
+        <td class="slide-content">[Full-bleed boat photo]</td>
+        <td class="slide-photos">image116.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">48</td>
+        <td class="slide-title">Pipe and beer!</td>
+        <td class="slide-content">LIFE'S PLEASURES · Pipe and Beer!</td>
+        <td class="slide-photos">image99.png<br>image107.png</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">49</td>
+        <td class="slide-title">Retirement!!</td>
+        <td class="slide-content">Retirement!!</td>
+        <td class="slide-photos">image105.png<br>image110.png</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">50</td>
+        <td class="slide-title">Winter days</td>
+        <td class="slide-content">WINTER IN CAPE BRETON · Winter Days · Skating · Winter Walk — Bras d'Or Lake · Beach Maker</td>
+        <td class="slide-photos">image108.png<br>image100.png<br>image106.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="chapter-block">
+  <div class="chapter-header">
+    <span class="chapter-num">Ch. 7</span>
+    <span class="chapter-name">Carpenter &amp; builder</span>
+    <span class="chapter-count">Slides 51–54</span>
+  </div>
+  <table class="slides-table">
+    <thead><tr><th>Slide</th><th>Title</th><th>Content / text</th><th>Photos</th><th>Style</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="slide-num">51</td>
+        <td class="slide-title">Master carpenter</td>
+        <td class="slide-content">HIS CRAFT · The Master Carpenter [5-photo grid]</td>
+        <td class="slide-photos">image102.png · image115.png<br>image112.jpg · image154.png<br>image117.png</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">52</td>
+        <td class="slide-title">Jay's Point cottage</td>
+        <td class="slide-content">COTTAGES · SPRING 1979 · 57 Jay's Point, Molega Lake · Built with his own hands · Construction — Spring 1979</td>
+        <td class="slide-photos">image118.jpg<br>image114.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">53</td>
+        <td class="slide-title">Boularderie cottage</td>
+        <td class="slide-content">CAPE BRETON · THE SECOND COTTAGE · 22 Brayside Court · Southside Boularderie</td>
+        <td class="slide-photos">image150.jpg<br>image113.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">54</td>
+        <td class="slide-title">Building altars</td>
+        <td class="slide-content">FAITH &amp; CRAFT · Building Altars · St. Joachim's Church · Boularderie · Chairs and Footstools</td>
+        <td class="slide-photos">image121.jpg<br>image119.jpg<br>image120.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="chapter-block">
+  <div class="chapter-header">
+    <span class="chapter-num">Ch. 8</span>
+    <span class="chapter-name">Family friends</span>
+    <span class="chapter-count">Slides 55–57</span>
+  </div>
+  <table class="slides-table">
+    <thead><tr><th>Slide</th><th>Title</th><th>Content / text</th><th>Photos</th><th>Style</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="slide-num">55</td>
+        <td class="slide-title">Family friends</td>
+        <td class="slide-content">LIFELONG FRIENDS · FAMILY FRIENDS · Boat Ride: Jay's Pt. — Dad, Mom, Mary &amp; Ray Wilkie · Christmas Canasta! — Mary &amp; Ray Wilkie · Campfire with the Wilkies</td>
+        <td class="slide-photos">image129.png<br>image125.png<br>image124.png</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">56</td>
+        <td class="slide-title">Friends (ii)</td>
+        <td class="slide-content">Jay's Pt. Picnic: Anne &amp; Don Reardon · Dad and Ray Wilkie · Dad and Joe Driscoll</td>
+        <td class="slide-photos">image127.png<br>image130.png<br>image135.png</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">57</td>
+        <td class="slide-title">Golden circle</td>
+        <td class="slide-content">FRIENDS &amp; FAMILY · Golden Circle · Dad with Anne &amp; Don Reardon · 50th Anniversary: Joe Driscoll, Ray Wilkie, Dad, Mom, Mary Wilkie, Dorothy McInnis · Pierce Doyle, Dad holding Jonathan, Mom, Ellie Doyle</td>
+        <td class="slide-photos">image128.png<br>image126.png<br>image132.png</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="chapter-block">
+  <div class="chapter-header">
+    <span class="chapter-num">Ch. 9</span>
+    <span class="chapter-name">Go Leafs Go! — The fan</span>
+    <span class="chapter-count">Slides 58–59</span>
+  </div>
+  <table class="slides-table">
+    <thead><tr><th>Slide</th><th>Title</th><th>Content / text</th><th>Photos</th><th>Style</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="slide-num">58</td>
+        <td class="slide-title">Leaf fans</td>
+        <td class="slide-content">MAPLE LEAF GARDENS · 1999 · Leaf Fans · Dad, Joe McInnis, Clary McInnis — Maple Leaf Gardens 1999</td>
+        <td class="slide-photos">image133.png</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">59</td>
+        <td class="slide-title">Go Leafs Go!!</td>
+        <td class="slide-content">MAPLE LEAF GARDENS · 1999 · GO LEAFS GO!! · Dad, Clary &amp; Joe McInnis</td>
+        <td class="slide-photos">image139.png<br>image137.png</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="chapter-block">
+  <div class="chapter-header">
+    <span class="chapter-num">Ch. 10</span>
+    <span class="chapter-name">Teacher &amp; coach</span>
+    <span class="chapter-count">Slide 60</span>
+  </div>
+  <table class="slides-table">
+    <thead><tr><th>Slide</th><th>Title</th><th>Content / text</th><th>Photos</th><th>Style</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="slide-num">60</td>
+        <td class="slide-title">Teacher and coach</td>
+        <td class="slide-content">SERVICE TO COMMUNITY · Teacher and Coach · Instructor · N.S.I.T. Carpentry Class · Minor Hockey Championship Team</td>
+        <td class="slide-photos">image136.png<br>image134.png<br>image141.png</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="chapter-block">
+  <div class="chapter-header">
+    <span class="chapter-num">Ch. 11</span>
+    <span class="chapter-name">90th birthday &amp; closing</span>
+    <span class="chapter-count">Slides 61–66</span>
+  </div>
+  <table class="slides-table">
+    <thead><tr><th>Slide</th><th>Title</th><th>Content / text</th><th>Photos</th><th>Style</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="slide-num">61</td>
+        <td class="slide-title">My 90th birthday</td>
+        <td class="slide-content">NOVEMBER 17, 2022 · MY 90TH BIRTHDAY · "A life worth celebrating"</td>
+        <td class="slide-photos">image143.jpg<br>image156.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">62</td>
+        <td class="slide-title">90th birthday friends</td>
+        <td class="slide-content">NOVEMBER 17, 2022 · 90th Birthday Friends · Dad, Clary and Joe · Dad and Clary · Mom, Dorothy McInnis, Joe Driscoll</td>
+        <td class="slide-photos">image157.jpg<br>image151.jpg<br>image153.jpg</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">63</td>
+        <td class="slide-title">Gathered to celebrate</td>
+        <td class="slide-content">90TH BIRTHDAY · FAMILY · Gathered to Celebrate · Paul, Dad and Andrew · Paula, Dad, Ryan and Chris · James, Dad, Mom · Angus, Jennifer and Sean</td>
+        <td class="slide-photos">image155.jpg<br>image145.jpg<br>image142.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">64</td>
+        <td class="slide-title">Birthday family (ii)</td>
+        <td class="slide-content">Stephen, Dad and James · Dad and John · Dad and Patricia</td>
+        <td class="slide-photos">image146.png<br>image149.png<br>image148.png</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">65</td>
+        <td class="slide-title">All together</td>
+        <td class="slide-content">90TH BIRTHDAY · FAMILY · All Together · Jonny, Jesse, Dad, Ronnie, Sean &amp; James · Dad, Karen and Gary · Sheldon, Mom and Dad</td>
+        <td class="slide-photos">image152.png<br>image144.jpg<br>image147.jpg</td>
+        <td><span class="badge badge-paper">Paper</span></td>
+      </tr>
+      <tr>
+        <td class="slide-num">66</td>
+        <td class="slide-title">Family memories — closing</td>
+        <td class="slide-content">Family Memories · Patrick Weldon Bray · November 17th, 1932 – April 28, 2026 · Fisherman · Carpenter · Teacher · Father · Beloved · "Hard times create strong men." — G. Michael Hopf · Rest now, Pat. You earned it. · Port Morien · Cape Breton</td>
+        <td class="slide-photos">[Illustrated only — Norris folk art closing scene, no photo]</td>
+        <td><span class="badge badge-sky">Sky scene</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
