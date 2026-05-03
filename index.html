@@ -318,7 +318,7 @@
 
   <div class="bottom-bar">
     <div class="left-group">
-      <button class="btn" style="background: var(--vintage-gold); color: black;" onclick="show(0); start();">Start</button>
+      <button class="btn" style="background: var(--vintage-gold); color: black;" onclick="returnToCover()">Home</button>
       <div class="progress" id="counter">1 / 0</div>
     </div>
     <div class="controls">
@@ -395,6 +395,18 @@
         start();
         if(document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
       }, 1000);
+    }
+
+    function returnToCover() {
+      stop();
+      playing = false;
+      document.getElementById('playBtn').innerText = 'Play';
+      show(0);
+      document.getElementById('landing-page').style.display = 'flex';
+      setTimeout(() => {
+        document.getElementById('landing-page').style.opacity = '1';
+      }, 10);
+      if(document.fullscreenElement) document.exitFullscreen();
     }
 
     async function init() {
