@@ -59,6 +59,47 @@
       color: var(--vintage-gold);
     }
 
+    .bw-switch {
+      position: relative;
+      width: 36px;
+      height: 18px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      transition: background 0.3s;
+    }
+
+    .bw-switch::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: var(--switch-pos, 2px);
+      width: 14px;
+      height: 14px;
+      background: var(--bar-text);
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
+
+    .bw-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--bar-text);
+      opacity: 0.7;
+    }
+
+    .top-right-group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .toggle-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     #chapter-name {
       text-align: right;
       color: var(--bar-text);
@@ -436,7 +477,21 @@
   <div class="top-bar">
     <div class="name-brand">Patrick Weldon Bray</div>
     <div class="main-title">A Celebration of Life</div>
-    <div id="chapter-name">A LIFE HONOURED</div>
+    <div class="top-right-group">
+      <div id="chapter-name">A LIFE HONOURED</div>
+      
+      <div class="toggle-group" onclick="toggleMute()" style="cursor: pointer;">
+        <span class="bw-label" id="muteLabel">Sound On</span>
+        <div class="bw-switch" id="muteSwitch"></div>
+      </div>
+
+      <div class="toggle-group" onclick="window.location.href='index.html'" style="cursor: pointer;">
+        <span class="bw-label">Color</span>
+        <div class="bw-switch" style="background: var(--vintage-gold);"><div style="position: absolute; top: 2px; right: 2px; width: 14px; height: 14px; background: white; border-radius: 50%;"></div></div>
+      </div>
+
+      <a href="guestbook.html" class="bw-label" style="text-decoration: none; border: 1px solid rgba(255,255,255,0.3); padding: 4px 8px; border-radius: 4px;">Guestbook</a>
+    </div>
   </div>
 
   <div class="main-stage" id="stage"></div>
@@ -450,11 +505,6 @@
       <button class="btn" onclick="prev()">Back</button>
       <button class="btn" id="playBtn" onclick="togglePlay()">Pause</button>
       <button class="btn" onclick="next()">Next</button>
-    </div>
-    <div class="controls">
-      <button class="btn" id="muteBtn" onclick="toggleMute()">Mute</button>
-      <button class="btn" onclick="window.location.href='guestbook.html'">Guestbook</button>
-      <button class="btn" onclick="toggleFS()">Fullscreen</button>
     </div>
   </div>
 
@@ -538,7 +588,15 @@
       const music = document.getElementById('bgMusic');
       if (!music) return;
       music.muted = !music.muted;
-      document.getElementById('muteBtn').innerText = music.muted ? 'Unmute' : 'Mute';
+      document.getElementById('muteLabel').innerText = music.muted ? 'Sound Off' : 'Sound On';
+      const switchEl = document.getElementById('muteSwitch');
+      if (music.muted) {
+        switchEl.style.background = '#666';
+        switchEl.style.setProperty('--switch-pos', '2px');
+      } else {
+        switchEl.style.background = 'var(--vintage-gold)';
+        switchEl.style.setProperty('--switch-pos', '20px');
+      }
     }
 
     function returnToCover() {
@@ -600,13 +658,21 @@
           }
 
           const photoCell = row.querySelector('.slide-photos');
-          const matches = photoCell.innerText.match(/image\d+\.(jpg|png|jpeg)/gi);
+          // Improved regex to catch all JPG/PNG/JPEG filenames, including those with spaces or descriptions
+          const matches = photoCell.innerText.match(/[^\s]+\.(jpg|png|jpeg)/gi);
           let allImgs = [];
           // Check for images override in expandedNarratives
           if (window.expandedNarratives && window.expandedNarratives[num] && window.expandedNarratives[num].images) {
             allImgs = window.expandedNarratives[num].images;
           } else if (matches) {
-            allImgs = matches.map(m => `Timeline Photos/extracted/ppt/media/${m}`);
+            allImgs = matches.map(m => {
+              // If it's one of the original PPT images, use the media folder
+              if (m.toLowerCase().startsWith('image')) {
+                return `Timeline Photos/extracted/ppt/media/${m}`;
+              }
+              // Otherwise, assume it's a direct path provided in the cell (like Picture Submissions/...)
+              return m;
+            });
           }
 
           for (let i = 0; i < allImgs.length; i += 2) {
