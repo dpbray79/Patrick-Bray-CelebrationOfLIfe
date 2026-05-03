@@ -63,7 +63,6 @@
     }
 
     #chapter-name {
-      text-align: right;
       color: var(--bar-text);
       font-family: 'Playfair Display', serif;
       font-size: 1.2rem;
@@ -71,6 +70,68 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       opacity: 0.9;
+    }
+
+    .top-right-group {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 20px;
+    }
+
+    /* B&W Toggle Style */
+    .bw-toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .bw-switch {
+      width: 40px;
+      height: 20px;
+      background: #444;
+      border-radius: 20px;
+      position: relative;
+      transition: background 0.3s;
+      border: 1px solid var(--vintage-gold);
+    }
+
+    .bw-switch::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 14px;
+      height: 14px;
+      background: var(--bar-text);
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    body.bw-mode .bw-switch {
+      background: var(--vintage-gold);
+    }
+
+    body.bw-mode .bw-switch::after {
+      transform: translateX(20px);
+      background: #2C3531;
+    }
+
+    .bw-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--bar-text);
+      opacity: 0.7;
+    }
+
+    /* B&W Filter */
+    body.bw-mode .visual-frame img, 
+    body.bw-mode .landing-content img,
+    body.bw-mode .triangle-container img {
+      filter: grayscale(100%) sepia(0.15) contrast(1.15) brightness(1.05);
     }
 
     /* Landing Page Overlay */
@@ -425,7 +486,13 @@
   <div class="top-bar">
     <div class="name-brand">Patrick Weldon Bray</div>
     <div class="main-title">A Celebration of Life</div>
-    <div id="chapter-name">A LIFE HONOURED</div>
+    <div class="top-right-group">
+      <div id="chapter-name">A LIFE HONOURED</div>
+      <div class="bw-toggle-container" onclick="toggleBW()">
+        <span class="bw-label">B&W Mode</span>
+        <div class="bw-switch"></div>
+      </div>
+    </div>
   </div>
 
   <div class="main-stage" id="stage"></div>
@@ -452,6 +519,14 @@
     let cur = 0;
     let timer = null;
     let playing = false;
+
+    function toggleBW() {
+      document.body.classList.toggle('bw-mode');
+      localStorage.setItem('bw-mode', document.body.classList.contains('bw-mode'));
+    }
+    if (localStorage.getItem('bw-mode') === 'true') {
+      document.body.classList.add('bw-mode');
+    }
 
     const chapterLabels = {
       "Opening": {
