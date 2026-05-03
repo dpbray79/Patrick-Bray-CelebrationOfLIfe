@@ -664,22 +664,19 @@
           const photoCell = row.querySelector('.slide-photos');
           let allImgs = [];
           
-          // Use semicolon as primary separator (handles spaces in filenames)
-          // Otherwise fall back to regex for space-separated imageX.jpg patterns
-          const rawPhotos = photoCell.innerText.trim();
-          let matches = [];
-          if (rawPhotos.includes(';')) {
-            matches = rawPhotos.split(';');
-          } else {
-            matches = rawPhotos.match(/[^\s]+\.(jpg|png|jpeg)/gi) || [];
-          }
+          // Use a robust regex to catch both original 'image123.jpg' patterns 
+          // and new 'Picture Submissions/...' paths which may contain spaces.
+          // We look for patterns ending in .jpg/png/jpeg.
+          const rawPhotos = photoCell.innerHTML;
+          const matches = rawPhotos.match(/(?:image\d+|Picture\sSubmissions\/[^;<\n\r]+)\.(?:jpg|png|jpeg)/gi) || [];
+          
+          let matchesClean = matches.map(m => m.trim());
 
           // Check for images override in expandedNarratives
           if (window.expandedNarratives && window.expandedNarratives[num] && window.expandedNarratives[num].images) {
             allImgs = window.expandedNarratives[num].images;
-          } else if (matches.length > 0) {
-            allImgs = matches.map(m => {
-              m = m.trim();
+          } else if (matchesClean.length > 0) {
+            allImgs = matchesClean.map(m => {
               // If it's one of the original PPT images, use the media folder
               if (m.toLowerCase().startsWith('image')) {
                 return `Timeline Photos/extracted/ppt/media/${m}`;
