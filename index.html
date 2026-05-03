@@ -441,7 +441,7 @@
 
         ch.querySelectorAll('tbody tr').forEach(row => {
           const num = row.querySelector('.slide-num').textContent;
-          if (num === "2") return; 
+          // No longer skipping slide 2
 
           let title = row.querySelector('.slide-title').textContent;
           let subtitle = "Patrick Weldon Bray";
