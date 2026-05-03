@@ -302,24 +302,28 @@
     const SUPABASE_ANON_KEY = 'sb_publishable_1r-ewd8PTiJuwymgHl4wHg_zpQTUT4M';
     
     // Initialize Supabase only if keys are provided
-    let supabase = null;
-    if (SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
-      supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    let supabaseClient = null;
+    if (SUPABASE_URL && SUPABASE_URL.indexOf('supabase.co') !== -1) {
+      // Use the global 'supabase' object from the CDN to create a client
+      supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
       fetchMessages();
     } else {
       document.getElementById('messages-list').innerHTML = `<div class="empty-state">Waiting for database connection...</div>`;
     }
 
     async function fetchMessages() {
-      if (!supabase) return;
+      if (!supabaseClient) return;
       
-      const { data, error } = await supabase
+      const { data, error } = await supabaseClient
         .from('guestbook')
         .select('*')
         .order('created_at', { ascending: false });
 
       if (error) {
         console.error('Error fetching messages:', error);
+        if (error.message.includes("not found")) {
+            document.getElementById('messages-list').innerHTML = `<div class="empty-state">The 'guestbook' table needs to be created in Supabase.</div>`;
+        }
         return;
       }
 
@@ -330,7 +334,7 @@
       const list = document.getElementById('messages-list');
       list.innerHTML = '';
 
-      if (messages.length === 0) {
+      if (!messages || messages.length === 0) {
         list.innerHTML = `<div class="empty-state">Be the first to leave a memory.</div>`;
         return;
       }
@@ -350,7 +354,7 @@
     }
 
     async function submitMessage() {
-      if (!supabase) {
+      if (!supabaseClient) {
         alert("Database is not connected yet.");
         return;
       }
@@ -369,13 +373,13 @@
       statusEl.innerText = "Submitting...";
       statusEl.style.color = "var(--vintage-sage)";
 
-      const { error } = await supabase
+      const { error } = await supabaseClient
         .from('guestbook')
         .insert([{ name: name, relationship: relation, message: message }]);
 
       if (error) {
         console.error("Error inserting message:", error);
-        statusEl.innerText = "An error occurred. Please try again.";
+        statusEl.innerText = "An error occurred. Check if the table exists in Supabase.";
         statusEl.style.color = "red";
       } else {
         statusEl.innerText = "Thank you! Your memory has been added.";
