@@ -115,13 +115,15 @@
       content: '';
       position: absolute;
       top: 2px;
-      left: var(--switch-pos, 2px);
       width: 14px;
       height: 14px;
       background: var(--bar-text);
       border-radius: 50%;
       transition: all 0.3s;
     }
+
+    #muteSwitch::after { left: var(--mute-pos, 2px); }
+    #bwSwitch::after { left: var(--bw-pos, 2px); }
 
     body.bw-mode .bw-switch {
       background: var(--vintage-gold);
@@ -661,7 +663,7 @@
 
       <div class="toggle-group" onclick="toggleBW()" style="cursor: pointer;">
         <span class="bw-label">B&W</span>
-        <div class="bw-switch"></div>
+        <div class="bw-switch" id="bwSwitch"></div>
       </div>
 
       <a href="guestbook.html" class="bw-label" style="text-decoration: none; border: 1px solid rgba(255,255,255,0.3); padding: 4px 8px; border-radius: 4px;">Guestbook</a>
@@ -696,14 +698,14 @@
     }
     function updateBWSwitch() {
       const isBW = document.body.classList.contains('bw-mode');
-      const switchEl = document.querySelector('.toggle-group:nth-of-type(2) .bw-switch');
+      const switchEl = document.getElementById('bwSwitch');
       if (switchEl) {
         if (isBW) {
           switchEl.style.background = 'var(--vintage-gold)';
-          switchEl.style.setProperty('--switch-pos', '20px');
+          switchEl.style.setProperty('--bw-pos', '20px');
         } else {
           switchEl.style.background = 'rgba(255, 255, 255, 0.2)';
-          switchEl.style.setProperty('--switch-pos', '2px');
+          switchEl.style.setProperty('--bw-pos', '2px');
         }
       }
     }
@@ -797,10 +799,10 @@
       const switchEl = document.getElementById('muteSwitch');
       if (music.muted) {
         switchEl.style.background = '#666';
-        switchEl.style.setProperty('--switch-pos', '2px');
+        switchEl.style.setProperty('--mute-pos', '2px');
       } else {
         switchEl.style.background = 'var(--vintage-gold)';
-        switchEl.style.setProperty('--switch-pos', '20px');
+        switchEl.style.setProperty('--mute-pos', '20px');
       }
     }
 
