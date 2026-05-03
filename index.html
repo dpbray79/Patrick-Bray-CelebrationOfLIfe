@@ -149,6 +149,8 @@
       align-items: center;
       justify-content: center;
       transition: opacity 1s ease-out;
+      overflow-y: auto;
+      padding: 40px 0;
     }
 
     .landing-content {
@@ -516,15 +518,25 @@
       .info-section { font-size: 0.95rem; line-height: 1.5; }
       
       .landing-content img {
-        width: 70%;
+        width: 60%;
         height: auto;
         margin-bottom: 20px;
       }
       .landing-content h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
       .landing-pre {
         font-size: 1.1rem;
+      }
+      .start-btn-hero {
+        padding: 15px 30px;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+      }
+      .landing-button-container {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
       }
     }
   </style>
@@ -538,7 +550,7 @@
       <p class="landing-pre">Remembering</p>
       <h2>Patrick Weldon Bray</h2>
       <p>November 17th, 1932 — April 28th, 2026</p>
-      <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+      <div class="landing-button-container" style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
         <button class="start-btn-hero" onclick="startShow()">Begin Celebration</button>
         <a href="guestbook.html" class="start-btn-hero"
           style="text-decoration: none; display: inline-block; background: transparent; color: var(--vintage-gold);">Sign
