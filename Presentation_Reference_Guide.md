@@ -8,13 +8,13 @@
 
 ### Slide 0: Opening Tribute
 - **Chapter Intro**: A LIFE HONOURED
-- **Summary Text**: Patrick Weldon Bray, born on November 17th, 1932, passed away on April 28th, 2026. Throughout his life, he was a dedicated fisherman, carpenter, and teacher who committed himself to his community and his craft. His greatest legacy, however, remains his family; he was a father of eight, a granddad to 27, and a great-granddad to 15. This is the story of 93 years lived fully, faithfully, and for his family.
+- **Summary Text**: Patrick Weldon Bray, born on November 17th, 1932, passed away on April 28th, 2026. Throughout his life, he was a dedicated fisherman, carpenter, and teacher who committed himself to his community and his craft. His greatest legacy, however, remains his family; he was a brother to 8, a father of 8, a granddad to 27, and a great-granddad to 15. This is the story of 93 years lived fully, faithfully, and for his family.
 
 ### Slide 1
 - **Title**: Born on the shores of Port Morien, Cape Breton.
 - **Subtitle**: Patrick Weldon Bray | Port Morien, Cape Breton | Nov 17, 1932
 - **Narrative**: Patrick Weldon Bray was born into the salt air of Port Morien on November 17th, 1932. He was the son of John Francis Bray — 'Papa' — a coal miner, and Agnes Euphemia (Kanary). Port Morien was home to the first coal mine in North America, and its shores and spirit shaped everything Pat would become.
-- **Photos**: port_morien_sign.jpg, image13.png, image15.jpg
+- **Photos**: port_morien_sign.jpg, Timeline Photos/extracted/ppt/media/image13.png, Timeline Photos/extracted/ppt/media/image15.jpg
 
 ### Slide 4
 - **Title**: His journey spanned nine decades of dedication and growth.
