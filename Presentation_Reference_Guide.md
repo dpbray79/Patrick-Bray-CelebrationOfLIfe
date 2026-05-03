@@ -11,22 +11,10 @@
 - **Summary Text**: Patrick Weldon Bray, born on November 17th, 1932, passed away on April 28th, 2026. Throughout his life, he was a dedicated fisherman, carpenter, and teacher who committed himself to his community and his craft. His greatest legacy, however, remains his family; he was a father of eight, a granddad to 27, and a great-granddad to 15. This is the story of 93 years lived fully, faithfully, and for his family.
 
 ### Slide 1
-- **Title**: Pat was born into the rugged beauty of Port Morien.
-- **Subtitle**: Patrick Weldon Bray | Port Morien, Cape Breton | Nov 17, 1932
-- **Narrative**: Patrick Weldon Bray was born into the salt air of Port Morien, Cape Breton, on November 17, 1932. He was the son of John Francis Bray and Agnes Euphemia Bray (Kanary), the beginning of a ninety-three-year journey defined by the sea and the steady work of his hands.
-- **Photos**: port_morien_sign.jpg, port_morien_map.jpg
-
-### Slide 2
 - **Title**: Born on the shores of Port Morien, Cape Breton.
-- **Subtitle**: Port Morien, Cape Breton · November 17, 1932
-- **Narrative**: Patrick Weldon Bray was born into the salt air of Port Morien on November 17th, 1932. Son of John Francis Bray — 'Papa' — a coal miner, and Agnes Euphemia (Kanary). Port Morien was home to the first coal mine in North America, and its shores and spirit shaped everything Pat would become.
-- **Photos**: None
-
-### Slide 3
-- **Title**: A life rich in family, faith, and the sea.
-- **Subtitle**: Patrick Weldon Bray | Family Overview
-- **Narrative**: Patrick Weldon Bray: Son. Brother. Husband. Father. Grandfather. Great-Grandfather. Father to 8, Granddad to 27, Great-Granddad to 15. A legacy of love that continues to grow.
-- **Photos**: None
+- **Subtitle**: Patrick Weldon Bray | Port Morien, Cape Breton | Nov 17, 1932
+- **Narrative**: Patrick Weldon Bray was born into the salt air of Port Morien on November 17th, 1932. He was the son of John Francis Bray — 'Papa' — a coal miner, and Agnes Euphemia (Kanary). Port Morien was home to the first coal mine in North America, and its shores and spirit shaped everything Pat would become.
+- **Photos**: port_morien_sign.jpg, image13.png, image15.jpg
 
 ### Slide 4
 - **Title**: His journey spanned nine decades of dedication and growth.
