@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patrick Weldon Bray - Guestbook</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    :root {
+      --vintage-bg: #F9F8F4;      
+      --vintage-text: #2C3531;    
+      --vintage-sage: #8A9A86;    
+      --vintage-gold: #C2A878;    
+      --bar-bg: #2C3531;         
+      --bar-text: #F9F8F4;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--vintage-bg);
+      font-family: 'Lora', serif;
+      color: var(--vintage-text);
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Bar Branding */
+    .top-bar {
+      height: 60px;
+      background: var(--bar-bg);
+      color: var(--bar-text);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 0 50px;
+      z-index: 4000;
+      flex-shrink: 0;
+    }
+
+    .top-bar .name-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--bar-text);
+      opacity: 0.8;
+    }
+
+    .top-bar .main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--vintage-gold);
+      text-align: center;
+    }
+
+    .top-bar .nav-links {
+      text-align: right;
+    }
+
+    .btn-nav {
+      background: transparent;
+      color: var(--vintage-gold);
+      border: 1px solid var(--vintage-gold);
+      padding: 8px 20px;
+      font-family: 'Lora', serif;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-nav:hover {
+      background: var(--vintage-gold);
+      color: var(--bar-bg);
+    }
+
+    /* Guestbook Container */
+    .guestbook-container {
+      flex: 1;
+      display: flex;
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 40px;
+      gap: 40px;
+      overflow: hidden;
+    }
+
+    /* Left Side: Form */
+    .sign-section {
+      flex: 1;
+      background: #fff;
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      border: 1px solid var(--vintage-gold);
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+    }
+
+    .sign-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--vintage-text);
+      margin: 0 0 10px 0;
+    }
+
+    .sign-section p {
+      color: var(--vintage-sage);
+      font-style: italic;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+      color: var(--vintage-text);
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      border: 1px solid #d3d1c7;
+      background: #F9F8F4;
+      box-sizing: border-box;
+      color: var(--vintage-text);
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--vintage-gold);
+    }
+
+    .form-group textarea {
+      height: 150px;
+      resize: none;
+    }
+
+    .submit-btn {
+      background: var(--bar-bg);
+      color: var(--vintage-gold);
+      border: none;
+      padding: 15px;
+      font-family: 'Playfair Display', serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background: var(--vintage-gold);
+      color: var(--bar-bg);
+    }
+
+    .status-msg {
+      margin-top: 15px;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--vintage-sage);
+    }
+
+    /* Right Side: Messages */
+    .messages-section {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .messages-header {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--vintage-text);
+      margin-bottom: 20px;
+      border-bottom: 1px solid #d3d1c7;
+      padding-bottom: 10px;
+    }
+
+    .messages-list {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Custom Scrollbar */
+    .messages-list::-webkit-scrollbar { width: 6px; }
+    .messages-list::-webkit-scrollbar-track { background: transparent; }
+    .messages-list::-webkit-scrollbar-thumb { background: var(--vintage-gold); border-radius: 3px; }
+
+    .message-card {
+      background: #fff;
+      padding: 30px;
+      border-left: 4px solid var(--vintage-gold);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+    }
+
+    .message-text {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: var(--vintage-text);
+      margin-bottom: 15px;
+      white-space: pre-wrap;
+    }
+
+    .message-author {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--bar-bg);
+    }
+
+    .message-meta {
+      font-size: 0.85rem;
+      color: var(--vintage-sage);
+      font-style: italic;
+      margin-top: 4px;
+    }
+
+    .empty-state {
+      text-align: center;
+      color: var(--vintage-sage);
+      font-style: italic;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="name-brand">Patrick Weldon Bray</div>
+    <div class="main-title">A Celebration of Life</div>
+    <div class="nav-links">
+      <a href="timeline.html" class="btn-nav">Return to Presentation</a>
+    </div>
+  </div>
+
+  <div class="guestbook-container">
+    
+    <!-- Left: Sign Form -->
+    <div class="sign-section">
+      <h2>Guestbook</h2>
+      <p>Please share a memory or leave a message for the family.</p>
+      
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="gb-name" placeholder="e.g. John Doe" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Relationship (Optional)</label>
+        <input type="text" id="gb-relation" placeholder="e.g. Friend, Cousin, Colleague">
+      </div>
+      
+      <div class="form-group">
+        <label>Message</label>
+        <textarea id="gb-message" placeholder="Share your memory here..." required></textarea>
+      </div>
+      
+      <button class="submit-btn" onclick="submitMessage()">Sign Guestbook</button>
+      <div id="status-msg" class="status-msg"></div>
+    </div>
+
+    <!-- Right: Read Messages -->
+    <div class="messages-section">
+      <div class="messages-header">Shared Memories</div>
+      <div class="messages-list" id="messages-list">
+        <div class="empty-state">Loading messages...</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // --- SUPABASE CONFIGURATION ---
+    // IMPORTANT: Replace these with your actual Supabase URL and Anon Key
+    const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+    
+    // Initialize Supabase only if keys are provided
+    let supabase = null;
+    if (SUPABASE_URL !== 'YOUR_SUPABASE_URL') {
+      supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      fetchMessages();
+    } else {
+      document.getElementById('messages-list').innerHTML = `<div class="empty-state">Waiting for database connection...</div>`;
+    }
+
+    async function fetchMessages() {
+      if (!supabase) return;
+      
+      const { data, error } = await supabase
+        .from('guestbook')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        console.error('Error fetching messages:', error);
+        return;
+      }
+
+      renderMessages(data);
+    }
+
+    function renderMessages(messages) {
+      const list = document.getElementById('messages-list');
+      list.innerHTML = '';
+
+      if (messages.length === 0) {
+        list.innerHTML = `<div class="empty-state">Be the first to leave a memory.</div>`;
+        return;
+      }
+
+      messages.forEach(msg => {
+        const date = new Date(msg.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        
+        const card = document.createElement('div');
+        card.className = 'message-card';
+        card.innerHTML = `
+          <div class="message-text">${escapeHTML(msg.message)}</div>
+          <div class="message-author">${escapeHTML(msg.name)}</div>
+          <div class="message-meta">${msg.relationship ? escapeHTML(msg.relationship) + ' • ' : ''}${date}</div>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    async function submitMessage() {
+      if (!supabase) {
+        alert("Database is not connected yet.");
+        return;
+      }
+
+      const name = document.getElementById('gb-name').value.trim();
+      const relation = document.getElementById('gb-relation').value.trim();
+      const message = document.getElementById('gb-message').value.trim();
+      const statusEl = document.getElementById('status-msg');
+
+      if (!name || !message) {
+        statusEl.innerText = "Please provide your name and a message.";
+        statusEl.style.color = "red";
+        return;
+      }
+
+      statusEl.innerText = "Submitting...";
+      statusEl.style.color = "var(--vintage-sage)";
+
+      const { error } = await supabase
+        .from('guestbook')
+        .insert([{ name: name, relationship: relation, message: message }]);
+
+      if (error) {
+        console.error("Error inserting message:", error);
+        statusEl.innerText = "An error occurred. Please try again.";
+        statusEl.style.color = "red";
+      } else {
+        statusEl.innerText = "Thank you! Your memory has been added.";
+        statusEl.style.color = "green";
+        
+        // Clear form
+        document.getElementById('gb-name').value = '';
+        document.getElementById('gb-relation').value = '';
+        document.getElementById('gb-message').value = '';
+        
+        // Refresh messages
+        fetchMessages();
+      }
+    }
+
+    // Helper to prevent XSS
+    function escapeHTML(str) {
+      return str.replace(/[&<>'"]/g, 
+        tag => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            "'": '&#39;',
+            '"': '&quot;'
+        }[tag] || tag)
+      );
+    }
+  </script>
+</body>
+</html>

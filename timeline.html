@@ -301,7 +301,10 @@
       <p class="landing-pre">Remembering</p>
       <h2>Patrick Weldon Bray</h2>
       <p>November 17th, 1932 — April 28th, 2026</p>
-      <button class="start-btn-hero" onclick="startShow()">Begin Celebration</button>
+      <div style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+        <button class="start-btn-hero" onclick="startShow()">Begin Celebration</button>
+        <a href="guestbook.html" class="start-btn-hero" style="text-decoration: none; display: inline-block; background: transparent; color: var(--vintage-gold);">Sign Guestbook</a>
+      </div>
     </div>
   </div>
 
@@ -323,7 +326,10 @@
       <button class="btn" id="playBtn" onclick="togglePlay()">Pause</button>
       <button class="btn" onclick="next()">Next</button>
     </div>
-    <button class="btn" onclick="toggleFS()">Fullscreen</button>
+    <div class="controls">
+      <button class="btn" onclick="window.location.href='guestbook.html'">Guestbook</button>
+      <button class="btn" onclick="toggleFS()">Fullscreen</button>
+    </div>
   </div>
 
   <script src="expanded_data.js"></script>
