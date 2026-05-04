@@ -1,14 +1,24 @@
 const expandedNarratives = {
   "1": {
-    "title": "Born on the shores of Port Morien, Cape Breton.",
+    "title": "Patrick Weldon Bray was born in Port Morien, Cape Breton.",
     "subtitle": "Patrick Weldon Bray | Port Morien, Cape Breton | Nov 17, 1932",
-    "story": "Patrick Weldon Bray was born into the salt air of Port Morien on November 17th, 1932. He was the son of John Francis Bray — 'Papa' — a coal miner, and Agnes Euphemia (Kanary). Port Morien was home to the first coal mine in North America, and its shores and spirit shaped everything Pat would become.",
+    "story": "Patrick Weldon Bray was born in Port Morien, Cape Breton, the site of North America’s first coal mine and 1st Scout Troop in North America. He grew up on Peach and Breakwater Streets and was the son of John Francis Bray (Papa) and Agnes Euphemia Bray (Kanary). His family included eight siblings: Gerald, Art, Thomas, Mary, Carmel, George, Frank, and Bill.",
     "images": ["port_morien_sign.jpg", "Timeline Photos/extracted/ppt/media/image13.png", "Timeline Photos/extracted/ppt/media/image15.jpg"]
+  },
+  "2": {
+    "title": "A proud son of Port Morien.",
+    "subtitle": "Patrick Weldon Bray | Origins | Port Morien",
+    "story": "Patrick grew up on Peach and Breakwater Streets. He was the son of John Francis Bray (Papa) and Agnes Euphemia Bray (Kanary). His family was his world, and his eight siblings were his first brothers and sisters in faith and life."
+  },
+  "3": {
+    "title": "The historic spirit of Port Morien.",
+    "subtitle": "Port Morien, Cape Breton | First Coal Mine & 1st Scout Troop",
+    "story": "Port Morien was home to the first coal mine in North America and the 1st Scout Troop in North America. This legacy of industry and community shaped Pat's resilient character."
   },
   "4": {
     "title": "His journey spanned nine decades of dedication and growth.",
-    "subtitle": "Patrick Weldon Bray | Port Morien | 1944 - 2021",
-    "story": "From a young boy navigating the shores of Morien at twelve, to a proud graduate, to the wise patriarch at 89—this is the evolution of a man who never forgot where he came from, no matter how far his journey took him."
+    "subtitle": "Patrick Weldon Bray | Port Morien | 1944 - 2022",
+    "story": "From a young boy navigating the shores of Morien at twelve, to a proud graduate, to the wise patriarch at 90—this is the evolution of a man who never forgot where he came from, no matter how far his journey took him."
   },
   "5": {
     "title": "He stood tall alongside his five brothers.",
@@ -16,7 +26,7 @@ const expandedNarratives = {
     "story": "The bond between the brothers was forged in the poverty of the post-war years. They stood by each other through everything, a band of brothers who shared the same strength and the same Cape Breton wit."
   },
   "6": {
-    "title": "His family stood together through the post-war years.",
+    "title": "In 1952, the family stood together in Port Morien.",
     "subtitle": "Gerald, Art, Thomas, Mary, Pat, Carmel, Frank, and Bill | Port Morien | 1952",
     "story": "In 1952, the Bray siblings gathered—a vibrant family full of life and potential. They were the last generation raised in the traditional coal-mining heritage of their beloved Port Morien."
   },
@@ -84,12 +94,12 @@ const expandedNarratives = {
   "19": {
     "title": "He built a home rooted in faith and family values.",
     "subtitle": "Ronnie and Sheldon's First Communions | Glace Bay | 1960s",
-    "story": "Our spiritual lives were always a priority. Dad and Mom were there for every milestone, ensuring that our foundations were rooted in faith and the values of the community."
+    "story": "Our spiritual lives were always a priority. Dad and Mom were there for every milestone, ensuring that our foundations were rooted in faith. We spent beautiful summers back in Cape Breton, keeping our roots strong and our connections deep."
   },
   "20": {
     "title": "He watched his children grow with a quiet, steady strength.",
     "subtitle": "Paula, John, and the family | Glace Bay | 1960s",
-    "story": "Growing up in Glace Bay, Dad watched his children grow with a quiet, immense pride. Whether holding a baby or guiding a teenager, his presence was the silent strength of our home."
+    "story": "Dad watched his children grow with a quiet, immense pride. Whether holding a baby or guiding a teenager, his presence was the silent strength of our home."
   },
   "21": {
     "title": "He taught his sons the ways of the woods and the water.",
@@ -119,12 +129,12 @@ const expandedNarratives = {
   "26": {
     "title": "He turned every house into a sanctuary for his family.",
     "subtitle": "Third St, Alexander St, and Vaughan Ave | 1950s - 1980s",
-    "story": "From the mining streets of New Aberdeen to the suburbs of Halifax, Dad turned every house into a sanctuary. His hands were never still, always building a better future for his family."
+    "story": "From the mining streets of New Aberdeen to Halifax, Dad turned every house into a sanctuary. His hands were never still, always building a better future for his family."
   },
   "27": {
     "title": "He embraced the role of 'Granddad' with all his heart.",
     "subtitle": "Pat with James and Michelle | Halifax | 1980s",
-    "story": "As the grandchildren began to arrive, a new softness emerged in Dad. Holding James and Michelle, he stepped into the role of 'Granddad' with the same devotion he gave to his own children."
+    "story": "As the grandchildren began to arrive, a new softness emerged in Dad. Holding James and Michelle, he stepped into his heartwarming role of Grandad with the same devotion he gave to his own children."
   },
   "28": {
     "title": "He shared endless stories and hugs with his 27 grandchildren.",
@@ -244,7 +254,7 @@ const expandedNarratives = {
   "51": {
     "title": "He inspired generations as a master of his craft.",
     "subtitle": "Pat's Craftsmanship | Halifax & Cape Breton | 1960s - 1980s",
-    "story": "His hands were his tools and his craft was his legacy. As a master carpenter and instructor at NSCC, he inspired generations of tradespeople to take pride in their work."
+    "story": "His hands were his tools and his craft was his legacy. As a master Carpentry Instructor at NSIT, he inspired generations of tradespeople to take pride in their work."
   },
   "52": {
     "title": "He built Jay's Point to be a sanctuary for us all.",
@@ -258,8 +268,8 @@ const expandedNarratives = {
   },
   "54": {
     "title": "He used his talents to serve the church and community.",
-    "subtitle": "Altars and Chairs | St. Joachim's Church | 1980s",
-    "story": "His craft was also an act of service. Building the altars and chairs for St. Joachim's Church, Dad used his talents to honor the community that had supported him throughout his life."
+    "subtitle": "Tabernacles and Chairs | St. Joachim's Church | 1980s",
+    "story": "His craft was also an act of service. Building the tabernacles and chairs for St. Joachim's Church, Dad used his talents to honor the community that had supported him throughout his life."
   },
   "55": {
     "title": "He cherished the friends who became his second family.",
@@ -313,13 +323,13 @@ const expandedNarratives = {
   },
   "65": {
     "title": "He left a world built on the foundation of his love.",
-    "subtitle": "Jonny, Jesse, Ronnie, Karen, Gary, and Sheldon | 2022",
+    "subtitle": "The Family | 2022",
     "story": "A final snapshot of a life well-lived. Surrounded by his children and grandchildren on his 90th, Dad stood as a testament to the enduring power of faith, family, and a life built with love."
   },
   "66": {
     "title": "He has returned to the tides of his beloved Port Morien.",
     "subtitle": "Patrick Weldon Bray | Nov 17, 1932 - April 28, 2026",
-    "story": "Fisherman. Carpenter. Teacher. Father. Beloved husband. You built us a beautiful life, Dad. Your legacy will live on in every board we cut, every story we tell, and every tide that rolls into Port Morien."
+    "story": "Fisherman. Carpenter. Teacher. Father. Beloved husband. You built us a beautiful life, Dad. Your legacy will live on in every board we cut, every story we tell, and every tide that rolls into Port Morien. Rest now, Pat. You earned it."
   }
 };
 
