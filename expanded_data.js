@@ -332,44 +332,44 @@ const expandedNarratives = {
     "story": "Fisherman. Carpenter. Teacher. Father. Beloved husband. You built us a beautiful life, Dad. Your legacy will live on in every board we cut, every story we tell, and every tide that rolls into Port Morien. Rest now, Pat. You earned it."
   },
   "301": {
-    "title": "A sanctuary in Bridgewater and Cape Breton.",
-    "subtitle": "Bridgewater & Cape Breton Cottages",
-    "story": "Whether it was the sign at the gate or the smoke from the campfire, the cottages were more than just buildings—they were the heart of our family gatherings."
+    "title": "Summers at the cottage — Bridgewater & Cape Breton.",
+    "subtitle": "Bridgewater & Cape Breton Cottages | Shared by Paula",
+    "story": "From the Bridgewater cottage sign to the campfire on a Cape Breton Thanksgiving weekend, these getaways were a beloved ritual. The cottages were always more than a place — they were the heartbeat of every summer."
   },
   "302": {
-    "title": "A master at work, even in the kitchen.",
-    "subtitle": "Dad in the Workshop and Kitchen",
-    "story": "Dad was always in his element when he was creating. Whether it was a precision piece in the workshop or a Sunday dinner for the whole family, he put his heart into everything he made."
+    "title": "Dad in his workshop, doing what he was best at.",
+    "subtitle": "The Workshop & Sunday Dinner | Shared by Paula",
+    "story": "Chris, Danielle, and Monique watched on as Grandad worked — and after every long day of building, he was right back at the sink doing the dishes after cooking Sunday dinner. He never stopped giving."
   },
   "303": {
-    "title": "Watching the next generation grow.",
-    "subtitle": "Birthdays, Communions, and Anniversaries",
-    "story": "From Ryan's 1st birthday to first communions, Dad and Mom were the steady pillars of every milestone. The grandkids even performed the Macarena for their anniversary!"
+    "title": "Every milestone, Mom and Dad were there.",
+    "subtitle": "Ryan's Birthday, First Communions & Anniversaries | Shared by Paula",
+    "story": "From Ryan's 1st birthday to his First Communion, from Grandad with Michelle, Monique and Ryan, to the grandkids performing the Macarena for Mom and Dad's anniversary — every celebration was made complete by their presence."
   },
   "304": {
-    "title": "The warmth of a Grandad's embrace.",
-    "subtitle": "Hugs, Cuddles, and Cherished Moments",
-    "story": "Monique, Michelle, Chris—every grandchild knew the comfort of Dad's hugs. He had a special way of making each one feel like they were his 'little ding-a-ling'."
+    "title": "The warmth of Grandad's embrace.",
+    "subtitle": "Monique, Michelle, Paula & Chris | Shared by Paula",
+    "story": "Monique cuddled in close, Michelle — his little ding-a-ling — beamed beside him, and Paula and Chris knew there was no safer place than in Grandad's arms. He had a hug for everyone."
   },
   "305": {
-    "title": "Ready for another adventure on the water.",
-    "subtitle": "Fishing Trips in Bridgewater and Cape Breton",
-    "story": "The boat was always ready, and the crew was always eager. Rickey, Johnny, Ryan—they all learned the rhythm of the waves from the best captain they knew."
+    "title": "Ready for an adventure — on the water and at the fire.",
+    "subtitle": "Fishing with Rickey, Johnny, Ryan & Grandad | Shared by Paula",
+    "story": "Dad's boat in Cape Breton was always ready. Rickey, Johnny, Ryan and Grandad headed out together — and when the day was done, a campfire at the Bridgewater cottage was the perfect ending."
   },
   "306": {
-    "title": "Laughter with the friends who became family.",
-    "subtitle": "Dad with Clarey, Mary Wilkie, and the boys",
-    "story": "Dad and Clarey shared a lifetime of laughs. Along with friends like Mary Wilkie, they built a community of support that spanned decades."
+    "title": "Dad and Clarey, enjoying one of their many laughs.",
+    "subtitle": "Clarey, Mary Wilkie, Rick, Sheldon & John | Shared by Paula",
+    "story": "There was no laugh quite like the one between Dad and Clarey. And around the table with Mary Wilkie, Rick, Sheldon and John, those laughs never stopped."
   },
   "307": {
-    "title": "Celebrating ninety years of love.",
-    "subtitle": "The 90th Birthday Celebration | 2022",
-    "story": "Surrounded by his children and grandchildren, Dad's 90th birthday was a celebration of a life well-lived and a legacy of love that continues to grow."
+    "title": "Celebrating his 90th — surrounded by love.",
+    "subtitle": "Yasha, Bella, Danielle, Paula, Chris & Ryan | Shared by Paula",
+    "story": "Grandad with Yasha, Bella and Danielle. Paula, Chris and Ryan by his side. A lobster feast with Monique. His 90th was everything it should be — joyful, full of family, and deeply memorable."
   },
   "308": {
-    "title": "The later years: Still building memories.",
-    "subtitle": "Bridgewater Cottage | 2025 and beyond",
-    "story": "His last trip to the Bridgewater cottage was a poignant reminder of the place he loved so much. Even in his later years, his spirit remained as vibrant as the morning tide."
+    "title": "Grandad's last trip to the Bridgewater Cottage, 2025.",
+    "subtitle": "Samantha, Alice, Ryan, Danielle & Grandad | Shared by Paula",
+    "story": "In 2025, Grandad made his last trip to the beloved Bridgewater cottage. Surrounded by Samantha, Alice, Ryan and Danielle, his spirit was as warm and vibrant as ever. A memory we will always treasure."
   }
 };
 
