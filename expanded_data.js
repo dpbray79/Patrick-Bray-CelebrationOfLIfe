@@ -3,7 +3,7 @@ const expandedNarratives = {
     "title": "Patrick Weldon Bray was born in Port Morien, Cape Breton.",
     "subtitle": "Patrick Weldon Bray | Port Morien, Cape Breton | Nov 17, 1932",
     "story": "Patrick Weldon Bray was born in Port Morien, Cape Breton, the site of North America’s first coal mine and 1st Scout Troop in North America. He grew up on Peach and Breakwater Streets and was the son of John Francis Bray (Papa) and Agnes Euphemia Bray (Kanary). His family included eight siblings: Gerald, Art, Thomas, Mary, Carmel, George, Frank, and Bill.",
-    "images": ["port_morien_sign.jpg", "Timeline Photos/extracted/ppt/media/image13.png", "Timeline Photos/extracted/ppt/media/image15.jpg"]
+    "images": ["Timeline Photos/extracted/ppt/media/image8.png", "Timeline Photos/extracted/ppt/media/image13.png", "Timeline Photos/extracted/ppt/media/image15.jpg"]
   },
   "2": {
     "title": "A proud son of Port Morien.",
