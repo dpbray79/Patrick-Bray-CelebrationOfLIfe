@@ -316,14 +316,14 @@
       /* No animation on individual images — prevents cross-image overflow */
     }
 
-    /* Ken Burns on the whole frame (not per-image) to prevent overlap */
-    @keyframes frame-kenburns {
+    /* Ken Burns per-image — gentle scale so images don't fully cover each other */
+    @keyframes enhanced-kenburns {
       0%   { transform: scale(1); }
-      100% { transform: scale(1.06); }
+      100% { transform: scale(1.05) translate(0.5%, 0.5%); }
     }
 
-    .slide.active:not(.cover-slide):not(.chapter-intro) .visual-frame {
-      animation: frame-kenburns 14s ease-in-out infinite alternate;
+    .slide.active:not(.cover-slide):not(.chapter-intro) .visual-frame img {
+      animation: enhanced-kenburns 14s ease-in-out infinite alternate;
     }
 
     .story-overlay {
