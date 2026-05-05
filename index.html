@@ -313,24 +313,17 @@
       padding: 12px;
       flex: 1;
       min-width: 0;
+      /* No animation on individual images — prevents cross-image overflow */
     }
 
-    /* Standard image animation */
-    .slide.active:not(.cover-slide):not(.chapter-intro) .visual-frame img {
-      animation: enhanced-kenburns 12s ease-in-out infinite alternate;
+    /* Ken Burns on the whole frame (not per-image) to prevent overlap */
+    @keyframes frame-kenburns {
+      0%   { transform: scale(1); }
+      100% { transform: scale(1.06); }
     }
 
-    @keyframes enhanced-kenburns {
-      0% {
-        transform: scale(1);
-      }
-      100% {
-        transform: scale(1.12) translate(0.1%, 0.1%);
-      }
-    }
-
-    .slide.active:not(.cover-slide):not(.chapter-intro) .visual-frame img {
-      animation: enhanced-kenburns 12s ease-in-out infinite alternate;
+    .slide.active:not(.cover-slide):not(.chapter-intro) .visual-frame {
+      animation: frame-kenburns 14s ease-in-out infinite alternate;
     }
 
     .story-overlay {
@@ -765,7 +758,7 @@
           // and new 'Picture Submissions/...' paths which may contain spaces.
           // We look for patterns ending in .jpg/png/jpeg.
           const rawPhotos = photoCell.innerHTML;
-          const matches = rawPhotos.match(/(?:image\d+|Picture\sSubmissions\/[^;<\n\r]+)\.(?:jpg|png|jpeg)/gi) || [];
+          const matches = rawPhotos.match(/(?:image\d+|Picture[\s_]Submissions\/[^;<\n\r]+)\.(jpg|jpeg|png|jfif|heic|JPG|JPEG|PNG|JFIF|HEIC)/gi) || [];
           
           let matchesClean = matches.map(m => m.trim());
 
