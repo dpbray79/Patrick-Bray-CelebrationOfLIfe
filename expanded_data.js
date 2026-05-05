@@ -330,6 +330,46 @@ const expandedNarratives = {
     "title": "He has returned to the tides of his beloved Port Morien.",
     "subtitle": "Patrick Weldon Bray | Nov 17, 1932 - April 28, 2026",
     "story": "Fisherman. Carpenter. Teacher. Father. Beloved husband. You built us a beautiful life, Dad. Your legacy will live on in every board we cut, every story we tell, and every tide that rolls into Port Morien. Rest now, Pat. You earned it."
+  },
+  "301": {
+    "title": "A sanctuary in Bridgewater and Cape Breton.",
+    "subtitle": "Bridgewater & Cape Breton Cottages",
+    "story": "Whether it was the sign at the gate or the smoke from the campfire, the cottages were more than just buildings—they were the heart of our family gatherings."
+  },
+  "302": {
+    "title": "A master at work, even in the kitchen.",
+    "subtitle": "Dad in the Workshop and Kitchen",
+    "story": "Dad was always in his element when he was creating. Whether it was a precision piece in the workshop or a Sunday dinner for the whole family, he put his heart into everything he made."
+  },
+  "303": {
+    "title": "Watching the next generation grow.",
+    "subtitle": "Birthdays, Communions, and Anniversaries",
+    "story": "From Ryan's 1st birthday to first communions, Dad and Mom were the steady pillars of every milestone. The grandkids even performed the Macarena for their anniversary!"
+  },
+  "304": {
+    "title": "The warmth of a Grandad's embrace.",
+    "subtitle": "Hugs, Cuddles, and Cherished Moments",
+    "story": "Monique, Michelle, Chris—every grandchild knew the comfort of Dad's hugs. He had a special way of making each one feel like they were his 'little ding-a-ling'."
+  },
+  "305": {
+    "title": "Ready for another adventure on the water.",
+    "subtitle": "Fishing Trips in Bridgewater and Cape Breton",
+    "story": "The boat was always ready, and the crew was always eager. Rickey, Johnny, Ryan—they all learned the rhythm of the waves from the best captain they knew."
+  },
+  "306": {
+    "title": "Laughter with the friends who became family.",
+    "subtitle": "Dad with Clarey, Mary Wilkie, and the boys",
+    "story": "Dad and Clarey shared a lifetime of laughs. Along with friends like Mary Wilkie, they built a community of support that spanned decades."
+  },
+  "307": {
+    "title": "Celebrating ninety years of love.",
+    "subtitle": "The 90th Birthday Celebration | 2022",
+    "story": "Surrounded by his children and grandchildren, Dad's 90th birthday was a celebration of a life well-lived and a legacy of love that continues to grow."
+  },
+  "308": {
+    "title": "The later years: Still building memories.",
+    "subtitle": "Bridgewater Cottage | 2025 and beyond",
+    "story": "His last trip to the Bridgewater cottage was a poignant reminder of the place he loved so much. Even in his later years, his spirit remained as vibrant as the morning tide."
   }
 };
 
