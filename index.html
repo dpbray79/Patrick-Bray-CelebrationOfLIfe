@@ -819,8 +819,11 @@
             // Pad to at least 3 images by cycling through available photos
             if (chunk.length > 0 && chunk.length < 3) {
               const base = [...chunk];
-              while (chunk.length < 3) {
-                chunk.push(base[chunk.length % base.length]);
+              const noPad = window.expandedNarratives && window.expandedNarratives[num] && window.expandedNarratives[num].noPadding;
+              if (!noPad) {
+                while (chunk.length < 3) {
+                  chunk.push(base[chunk.length % base.length]);
+                }
               }
             }
 
@@ -830,6 +833,11 @@
             const el = document.createElement('div');
             el.className = `slide ${posClass}`;
             el.id = `s-${count - 1}`;
+            
+            if (window.expandedNarratives && window.expandedNarratives[num] && window.expandedNarratives[num].bgColor) {
+              el.style.backgroundColor = window.expandedNarratives[num].bgColor;
+              el.style.backgroundImage = 'none'; // Ensure texture doesn't override
+            }
 
             let imgTags = chunk.map(src => `<img src="${src}">`).join('');
             if (chunk.length === 0) imgTags = `<div style="background: #222; width: 100%; height: 100%;"></div>`;

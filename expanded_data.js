@@ -129,7 +129,9 @@ const expandedNarratives = {
   "26": {
     "title": "He turned every house into a sanctuary for his family.",
     "subtitle": "Third St, Alexander St, and Vaughan Ave | 1950s - 1980s",
-    "story": "From the mining streets of New Aberdeen to Halifax, Dad turned every house into a sanctuary. His hands were never still, always building a better future for his family."
+    "story": "From the mining streets of New Aberdeen to Halifax, Dad turned every house into a sanctuary. His hands were never still, always building a better future for his family.",
+    "noPadding": true,
+    "bgColor": "antiquewhite"
   },
   "27": {
     "title": "He embraced the role of 'Granddad' with all his heart.",
@@ -154,7 +156,9 @@ const expandedNarratives = {
   "31": {
     "title": "He cherished the quiet joy of everyday moments with his grands.",
     "subtitle": "Granddad with Samantha and Alice | Halifax | 2010s",
-    "story": "Captured in a moment of pure, unscripted joy. These quiet, everyday memories with Samantha and Alice represent the true wealth of a life well-lived and a heart well-loved."
+    "story": "Captured in a moment of pure, unscripted joy. These quiet, everyday memories with Samantha and Alice represent the true wealth of a life well-lived and a heart well-loved.",
+    "noPadding": true,
+    "bgColor": "antiquewhite"
   },
   "32": {
     "title": "He mentored his grandsons in both skill and integrity.",
