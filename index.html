@@ -313,17 +313,45 @@
       padding: 12px;
       flex: 1;
       min-width: 0;
-      /* No animation on individual images — prevents cross-image overflow */
+      /* No animation on individual images — Ken Burns applied below */
     }
 
-    /* Ken Burns per-image — gentle scale so images don't fully cover each other */
-    @keyframes enhanced-kenburns {
-      0%   { transform: scale(1); }
-      100% { transform: scale(1.05) translate(0.5%, 0.5%); }
+    /* Scattered look via rotation + stagger — flex keeps them non-overlapping */
+    .visual-frame img:nth-child(1) {
+      transform: rotate(-3deg) translateY(-4%);
+      transform-origin: center;
+    }
+    .visual-frame img:nth-child(2) {
+      transform: rotate(3.5deg) translateY(4%);
+      transform-origin: center;
+    }
+    .visual-frame img:nth-child(3) {
+      transform: rotate(-2deg) translateY(-2%);
+      transform-origin: center;
     }
 
-    .slide.active:not(.cover-slide):not(.chapter-intro) .visual-frame img {
-      animation: enhanced-kenburns 14s ease-in-out infinite alternate;
+    /* Ken Burns per-image — gentle scale, no covering */
+    @keyframes kb-1 {
+      0%   { transform: rotate(-3deg) translateY(-4%) scale(1); }
+      100% { transform: rotate(-3deg) translateY(-4%) scale(1.05); }
+    }
+    @keyframes kb-2 {
+      0%   { transform: rotate(3.5deg) translateY(4%) scale(1); }
+      100% { transform: rotate(3.5deg) translateY(4%) scale(1.05); }
+    }
+    @keyframes kb-3 {
+      0%   { transform: rotate(-2deg) translateY(-2%) scale(1); }
+      100% { transform: rotate(-2deg) translateY(-2%) scale(1.05); }
+    }
+
+    .slide.active:not(.cover-slide):not(.chapter-intro) .visual-frame img:nth-child(1) {
+      animation: kb-1 14s ease-in-out infinite alternate;
+    }
+    .slide.active:not(.cover-slide):not(.chapter-intro) .visual-frame img:nth-child(2) {
+      animation: kb-2 14s ease-in-out infinite alternate;
+    }
+    .slide.active:not(.cover-slide):not(.chapter-intro) .visual-frame img:nth-child(3) {
+      animation: kb-3 14s ease-in-out infinite alternate;
     }
 
     .story-overlay {
