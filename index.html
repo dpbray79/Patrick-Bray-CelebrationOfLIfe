@@ -892,16 +892,7 @@
               count++;
               let chunk = allImgs.slice(i, i + 3);
 
-              // Pad to at least 3 images by cycling through available photos
-              if (chunk.length > 0 && chunk.length < 3) {
-                const base = [...chunk];
-                const noPad = window.expandedNarratives && window.expandedNarratives[num] && window.expandedNarratives[num].noPadding;
-                if (!noPad) {
-                  while (chunk.length < 3) {
-                    chunk.push(base[chunk.length % base.length]);
-                  }
-                }
-              }
+              // No padding logic — only show unique images assigned to the slide
 
               const posClass = count % 2 === 0 ? 'pos-left' : 'pos-right';
               const isCont = i > 0;
