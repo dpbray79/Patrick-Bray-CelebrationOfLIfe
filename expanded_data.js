@@ -18,7 +18,8 @@ const expandedNarratives = {
   "4": {
     "title": "His journey spanned nine decades of dedication and growth.",
     "subtitle": "Patrick Weldon Bray | Port Morien | 1944 - 2022",
-    "story": "From a young boy navigating the shores of Morien at twelve, to a proud graduate, to the wise patriarch at 90—this is the evolution of a man who never forgot where he came from, no matter how far his journey took him."
+    "story": "From a young boy navigating the shores of Morien at twelve, to a proud graduate, to the wise patriarch at 90—this is the evolution of a man who never forgot where he came from, no matter how far his journey took him.",
+    "noPadding": true
   },
   "5": {
     "title": "He stood tall alongside his five brothers.",
@@ -28,17 +29,20 @@ const expandedNarratives = {
   "6": {
     "title": "In 1952, the family stood together in Port Morien.",
     "subtitle": "Gerald, Art, Thomas, Mary, Pat, Carmel, Frank, and Bill | Port Morien | 1952",
-    "story": "In 1952, the Bray siblings gathered—a vibrant family full of life and potential. They were the last generation raised in the traditional coal-mining heritage of their beloved Port Morien."
+    "story": "In 1952, the Bray siblings gathered—a vibrant family full of life and potential. They were the last generation raised in the traditional coal-mining heritage of their beloved Port Morien.",
+    "noPadding": true
   },
   "7": {
     "title": "He shared a deep and lasting bond with his sister Carmel.",
     "subtitle": "Pat and Carmel Bray | Port Morien | Early 1950s",
-    "story": "A quiet moment between brother and sister. Pat and Carmel shared a deep connection, having navigated the joys and sorrows of their youth in the same small coastal village."
+    "story": "A quiet moment between brother and sister. Pat and Carmel shared a deep connection, having navigated the joys and sorrows of their youth in the same small coastal village.",
+    "noPadding": true
   },
   "8": {
     "title": "He walked the streets of his youth with a steady heart.",
     "subtitle": "Peach Street & Breakwater Street | Port Morien | 1950s",
-    "story": "These were the streets of his youth. From the first homestead on Peach Street to the house at 90 Breakwater Street, these locations were the sacred grounds where the Bray family's history was written."
+    "story": "These were the streets of his youth. From the first homestead on Peach Street to the house at 90 Breakwater Street, these locations were the sacred grounds where the Bray family's history was written.",
+    "noPadding": true
   },
   "9": {
     "title": "He found brothers in the friends he knew for life.",
@@ -48,7 +52,8 @@ const expandedNarratives = {
   "10": {
     "title": "He found his greatest love in Mary Alexandra McNeil.",
     "subtitle": "Pat and Mary Alexandra McNeil | Cape Breton | 1956",
-    "story": "In the summer of 1956, everything changed. Pat found the woman he would fall in love with and stay in love with for the next seventy years—Mary Alexandra McNeil."
+    "story": "In the summer of 1956, everything changed. Pat found the woman he would fall in love with and stay in love with for the next seventy years—Mary Alexandra McNeil.",
+    "noPadding": true
   },
   "11": {
     "title": "He became a husband on July 17th, 1956.",
@@ -69,12 +74,14 @@ const expandedNarratives = {
   "14": {
     "title": "He was the steady anchor of a seven-decade love story.",
     "subtitle": "Pat and Mary | Port Morien & Halifax | 1956 - 2026",
-    "story": "They were simply 'The Couple'. In every room they entered, their bond was palpable—a love that anchored our entire family through every tide and every storm."
+    "story": "They were simply 'The Couple'. In every room they entered, their bond was palpable—a love that anchored our entire family through every tide and every storm.",
+    "noPadding": true
   },
   "15": {
     "title": "He looked at her with the same love through all the years.",
     "subtitle": "Pat and Mary | Portraits | 1956 - 2022",
-    "story": "These portraits capture the evolving grace of their partnership. Through every year and every challenge, their eyes still held the same spark of love they found in each other as young Cape Bretoners."
+    "story": "These portraits capture the evolving grace of their partnership. Through every year and every challenge, their eyes still held the same spark of love they found in each other as young Cape Bretoners.",
+    "noPadding": true
   },
   "16": {
     "title": "He never stopped walking hand-in-hand with his one true love.",
@@ -84,22 +91,28 @@ const expandedNarratives = {
   "17": {
     "title": "He celebrated Mary's 90th year with profound gratitude.",
     "subtitle": "Mary's 90th Birthday | Jay's Point Cottage | July 2025",
-    "story": "In the summer heat of Molega Lake, we gathered to honor Mom's 90th birthday. It was a day of profound gratitude for the woman who, alongside Pat, built the beautiful family we are today."
+    "story": "In the summer heat of Molega Lake, we gathered to honor Mom's 90th birthday. It was a day of profound gratitude for the woman who, alongside Pat, built the beautiful family we are today.",
+    "noPadding": true,
+    "images": ["Timeline Photos/extracted/ppt/media/image17.jpg", "Picture Submissions/dad/mom birthday cb.JPG", "Picture Submissions/dad/mom birthday cb 70.jpg"]
   },
   "18": {
     "title": "He took immense pride in the children he raised.",
     "subtitle": "Pat with his children | Glace Bay & Halifax | 1950s - 1960s",
-    "story": "Dad's role as a father was his most cherished accomplishment. From the birth of Patricia to the arrival of the boys, his warm smile and steady hands provided a world of security for us all."
+    "story": "Dad's role as a father was his most cherished accomplishment. From the birth of Patricia to the arrival of the boys, his warm smile and steady hands provided a world of security for us all.",
+    "noPadding": true
   },
   "19": {
     "title": "He built a home rooted in faith and family values.",
     "subtitle": "Ronnie and Sheldon's First Communions | Glace Bay | 1960s",
-    "story": "Our spiritual lives were always a priority. Dad and Mom were there for every milestone, ensuring that our foundations were rooted in faith. We spent beautiful summers back in Cape Breton, keeping our roots strong and our connections deep."
+    "story": "Our spiritual lives were always a priority. Dad and Mom were there for every milestone, ensuring that our foundations were rooted in faith. We spent beautiful summers back in Cape Breton, keeping our roots strong and our connections deep.",
+    "noPadding": true,
+    "images": ["Timeline Photos/extracted/ppt/media/image19.jpg", "Picture Submissions/Paula_Submissions/Mom_&_Dad_at_Ryan_first_Communion_.jpg"]
   },
   "20": {
     "title": "He watched his children grow with a quiet, steady strength.",
     "subtitle": "Paula, John, and the family | Glace Bay | 1960s",
-    "story": "Dad watched his children grow with a quiet, immense pride. Whether holding a baby or guiding a teenager, his presence was the silent strength of our home."
+    "story": "Dad watched his children grow with a quiet, immense pride. Whether holding a baby or guiding a teenager, his presence was the silent strength of our home.",
+    "noPadding": true
   },
   "21": {
     "title": "He taught his sons the ways of the woods and the water.",
@@ -114,7 +127,8 @@ const expandedNarratives = {
   "23": {
     "title": "He stood as the bridge between generations at the lake.",
     "subtitle": "Family Reunion | Molega Lake | July 1982",
-    "story": "The summer of 1982 brought the whole clan back to the lake to celebrate Papa and Grandma's 50th. Surrounded by the woods he loved, Dad stood as a bridge between the generations."
+    "story": "The summer of 1982 brought the whole clan back to the lake to celebrate Papa and Grandma's 50th. Surrounded by the woods he loved, Dad stood as a bridge between the generations.",
+    "noPadding": true
   },
   "24": {
     "title": "He found simple joy in the peace of the open sky.",
@@ -123,8 +137,10 @@ const expandedNarratives = {
   },
   "25": {
     "title": "He felt truly at home in the waves of the Bras d'Or.",
+    "subtitle": "Pat Swimming | Cape Breton | 1960s - 1980s",
     "story": "Dad was a beautiful swimmer, a joy to watch in the waves of the Bras d'Or Lakes or the ocean at Morien. He passed his love for the water down to every single one of us.",
-    "subtitle": "Pat Swimming | Cape Breton | 1960s - 1980s"
+    "noPadding": true,
+    "images": ["Timeline Photos/extracted/ppt/media/image25.jpg", "Picture Submissions/dad/dad swim.jpeg"]
   },
   "26": {
     "title": "He turned every house into a sanctuary for his family.",
@@ -136,29 +152,35 @@ const expandedNarratives = {
   "27": {
     "title": "He embraced the role of 'Granddad' with all his heart.",
     "subtitle": "Pat with James and Michelle | Halifax | 1980s",
-    "story": "As the grandchildren began to arrive, a new softness emerged in Dad. Holding James and Michelle, he stepped into his heartwarming role of Grandad with the same devotion he gave to his own children."
+    "story": "As the grandchildren began to arrive, a new softness emerged in Dad. Holding James and Michelle, he stepped into his heartwarming role of Grandad with the same devotion he gave to his own children.",
+    "noPadding": true,
+    "images": ["Timeline Photos/extracted/ppt/media/image56.png", "Timeline Photos/extracted/ppt/media/image77.jpg", "Timeline Photos/extracted/ppt/media/image65.jpg", "Picture Submissions/Paula_Submissions/Monique_cuddling_with_Grandad_.JPG"]
   },
   "28": {
     "title": "He shared endless stories and hugs with his 27 grandchildren.",
     "subtitle": "Granddad and the Grandchildren | Nova Scotia | 1980s - 2010s",
-    "story": "To his 27 grandchildren, he was a source of endless hugs and legendary stories. He shared his time and his heart with an open generosity that made each of them feel uniquely loved."
+    "story": "To his 27 grandchildren, he was a source of endless hugs and legendary stories. He shared his time and his heart with an open generosity that made each of them feel uniquely loved.",
+    "noPadding": true
   },
   "29": {
     "title": "He was a champion for the dreams of his granddaughters.",
     "subtitle": "Granddad with Jennifer, Monique, and Monica | Halifax | 1990s - 2000s",
-    "story": "Granddad had a special gentleness with the girls of the family. From Jennifer to Monique and little Monica, he was a champion of their dreams and a constant source of warm smiles."
+    "story": "Granddad had a special gentleness with the girls of the family. From Jennifer to Monique and little Monica, he was a champion of their dreams and a constant source of warm smiles.",
+    "noPadding": true
   },
   "30": {
     "title": "He was happiest when the lake was full of family laughter.",
     "subtitle": "85th Birthday & 50th Anniversary | Jay's Point | 2017",
-    "story": "Celebrations were always better by the water. Whether marking his 85th year or his half-century of marriage, Dad was at his happiest when the lake was full of his grandchildren's laughter."
+    "story": "Celebrations were always better by the water. Whether marking his 85th year or his half-century of marriage, Dad was at his happiest when the lake was full of his grandchildren's laughter.",
+    "noPadding": true
   },
   "31": {
     "title": "He cherished the quiet joy of everyday moments with his grands.",
     "subtitle": "Granddad with Samantha and Alice | Halifax | 2010s",
     "story": "Captured in a moment of pure, unscripted joy. These quiet, everyday memories with Samantha and Alice represent the true wealth of a life well-lived and a heart well-loved.",
     "noPadding": true,
-    "bgColor": "antiquewhite"
+    "bgColor": "antiquewhite",
+    "images": ["Timeline Photos/extracted/ppt/media/image64.jpg", "Picture Submissions/dad/dad and grandchildren.jpg"]
   },
   "32": {
     "title": "He mentored his grandsons in both skill and integrity.",
