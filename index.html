@@ -780,7 +780,7 @@
         }
 
         ch.querySelectorAll('tbody tr').forEach(row => {
-          const num = row.querySelector('.slide-num').textContent;
+          const num = row.querySelector('.slide-num').textContent.trim();
           // No longer skipping slide 2
 
           let title = row.querySelector('.slide-title').textContent;

@@ -1,4 +1,4 @@
-const expandedNarratives = {
+var expandedNarratives = {
   "1": {
     "title": "Patrick Weldon Bray was born in Port Morien, Cape Breton.",
     "subtitle": "Patrick Weldon Bray | Port Morien, Cape Breton | Nov 17, 1932",
