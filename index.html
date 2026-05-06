@@ -365,8 +365,8 @@
     }
 
     @keyframes overlayFloat {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(10px, 0); }
+      0% { transform: translateX(-30px); }
+      100% { transform: translateX(30px); }
     }
 
     .slide.active:not(.cover-slide):not(.chapter-intro) .visual-frame img:nth-child(1) {
@@ -394,17 +394,31 @@
       border-top: 4px solid var(--vintage-gold);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
       border-radius: 8px;
-      animation: overlayFloat 12s ease-in-out infinite alternate;
+      opacity: 0;
+      transition: opacity 2s ease-in-out, left 2s cubic-bezier(0.165, 0.84, 0.44, 1), right 2s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
     .slide.pos-left .story-overlay {
-      left: 80px;
+      left: -500px; /* Start way off screen */
       text-align: left;
     }
 
     .slide.pos-right .story-overlay {
-      right: 80px;
+      right: -500px; /* Start way off screen */
       text-align: right;
+    }
+
+    .slide.active .story-overlay {
+      opacity: 1;
+      animation: overlayFloat 12s ease-in-out infinite alternate;
+    }
+
+    .slide.active.pos-left .story-overlay {
+      left: 80px;
+    }
+
+    .slide.active.pos-right .story-overlay {
+      right: 80px;
     }
 
     .photo-caption {
