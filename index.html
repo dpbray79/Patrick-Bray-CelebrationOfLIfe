@@ -122,8 +122,13 @@
       transition: all 0.3s;
     }
 
-    #muteSwitch::after { left: var(--mute-pos, 2px); }
-    #bwSwitch::after { left: var(--bw-pos, 2px); }
+    #muteSwitch::after {
+      left: var(--mute-pos, 2px);
+    }
+
+    #bwSwitch::after {
+      left: var(--bw-pos, 2px);
+    }
 
     body.bw-mode .bw-switch {
       background: var(--vintage-gold);
@@ -155,7 +160,7 @@
     }
 
     /* B&W Filter */
-    body.bw-mode .visual-frame img, 
+    body.bw-mode .visual-frame img,
     body.bw-mode .landing-content img,
     body.bw-mode .triangle-container img {
       filter: grayscale(100%) sepia(0.15) contrast(1.15) brightness(1.05);
@@ -305,8 +310,8 @@
     }
 
     .visual-frame img {
-      max-width: 32%; /* Default for 3 images */
-      max-height: 85%;
+      max-width: 35%; /* Default for 3 images */
+      max-height: 90%;
       object-fit: contain;
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
       background: white;
@@ -318,15 +323,15 @@
 
     /* Single photo layout */
     .visual-frame img:only-child {
-      max-width: 80%;
-      max-height: 80%;
+      max-width: 85%;
+      max-height: 85%;
     }
 
     /* Two photos layout */
     .visual-frame img:first-child:nth-last-child(2),
     .visual-frame img:first-child:nth-last-child(2) ~ img {
-      max-width: 45%;
-      max-height: 85%;
+      max-width: 50%;
+      max-height: 90%;
     }
 
     /* Scattered look via rotation + stagger — flex keeps them non-overlapping */
@@ -334,10 +339,12 @@
       transform: rotate(-3deg) translateY(-4%);
       transform-origin: center;
     }
+
     .visual-frame img:nth-child(2) {
       transform: rotate(3.5deg) translateY(4%);
       transform-origin: center;
     }
+
     .visual-frame img:nth-child(3) {
       transform: rotate(-2deg) translateY(-2%);
       transform-origin: center;
@@ -358,17 +365,27 @@
     }
 
     @keyframes overlayFloat {
-      0% { transform: translate(-50%, 0); }
-      50% { transform: translate(-49.5%, -2px); }
-      100% { transform: translate(-50%, 0); }
+      0% {
+        transform: translate(-50%, 0);
+      }
+
+      50% {
+        transform: translate(-49.5%, -2px);
+      }
+
+      100% {
+        transform: translate(-50%, 0);
+      }
     }
 
     .slide.active:not(.cover-slide):not(.chapter-intro) .visual-frame img:nth-child(1) {
       animation: kb-1 14s ease-in-out infinite alternate;
     }
+
     .slide.active:not(.cover-slide):not(.chapter-intro) .visual-frame img:nth-child(2) {
       animation: kb-2 14s ease-in-out infinite alternate;
     }
+
     .slide.active:not(.cover-slide):not(.chapter-intro) .visual-frame img:nth-child(3) {
       animation: kb-3 14s ease-in-out infinite alternate;
     }
@@ -380,8 +397,10 @@
       width: 70%;
       max-width: 1200px;
       z-index: 3000;
-      background: rgba(44, 53, 49, 0.75); /* Translucent */
-      backdrop-filter: blur(10px); /* Glassmorphism */
+      background: rgba(44, 53, 49, 0.75);
+      /* Translucent */
+      backdrop-filter: blur(10px);
+      /* Glassmorphism */
       color: #F4F2EE;
       padding: 25px 40px;
       border-top: 4px solid var(--vintage-gold);
@@ -494,9 +513,18 @@
         padding: 0 20px;
         height: 50px;
       }
-      .top-bar .name-brand { font-size: 0.7rem; }
-      #chapter-name { font-size: 0.8rem; }
-      .bw-label { display: none; }
+
+      .top-bar .name-brand {
+        font-size: 0.7rem;
+      }
+
+      #chapter-name {
+        font-size: 0.8rem;
+      }
+
+      .bw-label {
+        display: none;
+      }
 
       .bottom-bar {
         height: auto;
@@ -505,7 +533,9 @@
         justify-content: center;
         gap: 10px;
       }
-      .bottom-bar .left-group, .bottom-bar .controls {
+
+      .bottom-bar .left-group,
+      .bottom-bar .controls {
         flex: 1 1 100%;
         justify-content: center;
       }
@@ -513,16 +543,19 @@
       .slide {
         flex-direction: column !important;
       }
+
       .visual-frame {
         height: 50% !important;
         width: 100% !important;
         padding: 20px !important;
         padding-bottom: 0 !important;
       }
+
       .visual-frame img {
         max-width: 90%;
         max-height: 90%;
       }
+
       .story-overlay {
         position: relative !important;
         width: 100% !important;
@@ -534,26 +567,36 @@
         background: var(--overlay-bg) !important;
         overflow-y: auto;
       }
-      
-      .intro-title { font-size: 1.4rem; }
-      .info-section { font-size: 0.95rem; line-height: 1.5; }
-      
+
+      .intro-title {
+        font-size: 1.4rem;
+      }
+
+      .info-section {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
       .landing-content img {
         width: 60%;
         height: auto;
         margin-bottom: 20px;
       }
+
       .landing-content h2 {
         font-size: 2rem;
       }
+
       .landing-pre {
         font-size: 1.1rem;
       }
+
       .start-btn-hero {
         padding: 15px 30px;
         font-size: 0.9rem;
         letter-spacing: 2px;
       }
+
       .landing-button-container {
         flex-direction: column;
         width: 100%;
@@ -575,7 +618,8 @@
       <p class="landing-pre">Remembering</p>
       <h2>Patrick Weldon Bray</h2>
       <p>November 17th, 1932 — April 28th, 2026</p>
-      <div class="landing-button-container" style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
+      <div class="landing-button-container"
+        style="display: flex; gap: 20px; justify-content: center; margin-top: 20px;">
         <button class="start-btn-hero" onclick="startShow()">Begin Celebration</button>
         <a href="guestbook.html" class="start-btn-hero"
           style="text-decoration: none; display: inline-block; background: transparent; color: var(--vintage-gold);">Sign
@@ -589,7 +633,7 @@
     <div class="main-title">A Celebration of Life</div>
     <div class="top-right-group">
       <div id="chapter-name">A LIFE HONOURED</div>
-      
+
       <div class="toggle-group" onclick="toggleMute()" style="cursor: pointer;">
         <span class="bw-label" id="muteLabel">Sound On</span>
         <div class="bw-switch" id="muteSwitch"></div>
@@ -600,7 +644,8 @@
         <div class="bw-switch" id="bwSwitch"></div>
       </div>
 
-      <a href="guestbook.html" class="bw-label" style="text-decoration: none; border: 1px solid rgba(255,255,255,0.3); padding: 4px 8px; border-radius: 4px;">Guestbook</a>
+      <a href="guestbook.html" class="bw-label"
+        style="text-decoration: none; border: 1px solid rgba(255,255,255,0.3); padding: 4px 8px; border-radius: 4px;">Guestbook</a>
     </div>
   </div>
 
@@ -765,112 +810,112 @@
         const resp = await fetch('patrick_bray_slideshow_workplan.html');
         if (!resp.ok) throw new Error('Failed to load workplan');
         const html = await resp.text();
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      const stage = document.getElementById('stage');
-      const chapters = doc.querySelectorAll('.chapter-block');
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const stage = document.getElementById('stage');
+        const chapters = doc.querySelectorAll('.chapter-block');
 
-      let count = 0;
-      let lastChapter = null;
+        let count = 0;
+        let lastChapter = null;
 
-      chapters.forEach(ch => {
-        const rawChName = ch.querySelector('.chapter-name').textContent;
-        const chData = chapterLabels[rawChName] || { label: rawChName.toUpperCase(), summary: "A journey through memory and legacy." };
+        chapters.forEach(ch => {
+          const rawChName = ch.querySelector('.chapter-name').textContent;
+          const chData = chapterLabels[rawChName] || { label: rawChName.toUpperCase(), summary: "A journey through memory and legacy." };
 
-        if (rawChName !== lastChapter) {
-          count++;
-          const introEl = document.createElement('div');
-          introEl.className = `slide chapter-intro ${count === 1 ? 'active' : ''}`;
-          introEl.id = `s-${count - 1}`;
-          introEl.innerHTML = `
+          if (rawChName !== lastChapter) {
+            count++;
+            const introEl = document.createElement('div');
+            introEl.className = `slide chapter-intro ${count === 1 ? 'active' : ''}`;
+            introEl.id = `s-${count - 1}`;
+            introEl.innerHTML = `
             <h2>${chData.label}</h2>
             <div style="max-width: 800px; text-align: center; margin-top: 40px; line-height: 1.6; font-size: 1.8rem; color: #F9F8F4; opacity: 0.9;">
               ${chData.summary}
             </div>
           `;
-          stage.appendChild(introEl);
-          slides.push({ ch: chData.label, type: 'intro' });
-          lastChapter = rawChName;
-        }
-
-        ch.querySelectorAll('tbody tr').forEach(row => {
-          const num = row.querySelector('.slide-num').textContent.trim();
-          // No longer skipping slide 2
-
-          let title = row.querySelector('.slide-title').textContent;
-          let subtitle = "Patrick Weldon Bray";
-          let story = row.querySelector('.slide-content').innerHTML;
-
-          if (window.expandedNarratives && window.expandedNarratives[num]) {
-            title = window.expandedNarratives[num].title;
-            subtitle = window.expandedNarratives[num].subtitle;
-            story = window.expandedNarratives[num].story;
+            stage.appendChild(introEl);
+            slides.push({ ch: chData.label, type: 'intro' });
+            lastChapter = rawChName;
           }
 
-          const photoCell = row.querySelector('.slide-photos');
-          let allImgs = [];
-          
-          // Use a robust regex to catch both original 'image123.jpg' patterns 
-          // and new 'Picture Submissions/...' paths which may contain spaces.
-          // We look for patterns ending in .jpg/png/jpeg.
-          const rawPhotos = photoCell.innerHTML;
-          const matches = rawPhotos.match(/(?:image\d+|Picture[\s_]Submissions\/[^;<\n\r]+)\.(jpg|jpeg|png|jfif|heic|JPG|JPEG|PNG|JFIF|HEIC)/gi) || [];
-          
-          let matchesClean = matches.map(m => m.trim());
+          ch.querySelectorAll('tbody tr').forEach(row => {
+            const num = row.querySelector('.slide-num').textContent.trim();
+            // No longer skipping slide 2
 
-          // Check for images override in expandedNarratives
-          if (window.expandedNarratives && window.expandedNarratives[num] && window.expandedNarratives[num].images) {
-            allImgs = window.expandedNarratives[num].images;
-          } else if (matchesClean.length > 0) {
-            allImgs = matchesClean.map(m => {
-              // If it's one of the original PPT images, use the media folder
-              if (m.toLowerCase().startsWith('image')) {
-                return `Timeline Photos/extracted/ppt/media/${m}`;
-              }
-              // Otherwise, assume it's a direct path provided in the cell (like Picture Submissions/...)
-              return m;
-            });
-          }
+            let title = row.querySelector('.slide-title').textContent;
+            let subtitle = "Patrick Weldon Bray";
+            let story = row.querySelector('.slide-content').innerHTML;
 
-          for (let i = 0; i < allImgs.length; i += 3) {
-            count++;
-            let chunk = allImgs.slice(i, i + 3);
+            if (window.expandedNarratives && window.expandedNarratives[num]) {
+              title = window.expandedNarratives[num].title;
+              subtitle = window.expandedNarratives[num].subtitle;
+              story = window.expandedNarratives[num].story;
+            }
 
-            // Pad to at least 3 images by cycling through available photos
-            if (chunk.length > 0 && chunk.length < 3) {
-              const base = [...chunk];
-              const noPad = window.expandedNarratives && window.expandedNarratives[num] && window.expandedNarratives[num].noPadding;
-              if (!noPad) {
-                while (chunk.length < 3) {
-                  chunk.push(base[chunk.length % base.length]);
+            const photoCell = row.querySelector('.slide-photos');
+            let allImgs = [];
+
+            // Use a robust regex to catch both original 'image123.jpg' patterns 
+            // and new 'Picture Submissions/...' paths which may contain spaces.
+            // We look for patterns ending in .jpg/png/jpeg.
+            const rawPhotos = photoCell.innerHTML;
+            const matches = rawPhotos.match(/(?:image\d+|Picture[\s_]Submissions\/[^;<\n\r]+)\.(jpg|jpeg|png|jfif|heic|JPG|JPEG|PNG|JFIF|HEIC)/gi) || [];
+
+            let matchesClean = matches.map(m => m.trim());
+
+            // Check for images override in expandedNarratives
+            if (window.expandedNarratives && window.expandedNarratives[num] && window.expandedNarratives[num].images) {
+              allImgs = window.expandedNarratives[num].images;
+            } else if (matchesClean.length > 0) {
+              allImgs = matchesClean.map(m => {
+                // If it's one of the original PPT images, use the media folder
+                if (m.toLowerCase().startsWith('image')) {
+                  return `Timeline Photos/extracted/ppt/media/${m}`;
+                }
+                // Otherwise, assume it's a direct path provided in the cell (like Picture Submissions/...)
+                return m;
+              });
+            }
+
+            for (let i = 0; i < allImgs.length; i += 3) {
+              count++;
+              let chunk = allImgs.slice(i, i + 3);
+
+              // Pad to at least 3 images by cycling through available photos
+              if (chunk.length > 0 && chunk.length < 3) {
+                const base = [...chunk];
+                const noPad = window.expandedNarratives && window.expandedNarratives[num] && window.expandedNarratives[num].noPadding;
+                if (!noPad) {
+                  while (chunk.length < 3) {
+                    chunk.push(base[chunk.length % base.length]);
+                  }
                 }
               }
-            }
 
-            const posClass = count % 2 === 0 ? 'pos-left' : 'pos-right';
-            const isCont = i > 0;
+              const posClass = count % 2 === 0 ? 'pos-left' : 'pos-right';
+              const isCont = i > 0;
 
-            const el = document.createElement('div');
-            el.className = `slide ${posClass}`;
-            el.id = `s-${count - 1}`;
-            
-            if (window.expandedNarratives && window.expandedNarratives[num] && window.expandedNarratives[num].bgColor) {
-              el.style.backgroundColor = window.expandedNarratives[num].bgColor;
-              el.style.backgroundImage = 'none'; // Ensure texture doesn't override
-            }
+              const el = document.createElement('div');
+              el.className = `slide ${posClass}`;
+              el.id = `s-${count - 1}`;
 
-            let imgTags = chunk.map(src => `<img src="${src}">`).join('');
-            if (chunk.length === 0) imgTags = `<div style="background: #222; width: 100%; height: 100%;"></div>`;
+              if (window.expandedNarratives && window.expandedNarratives[num] && window.expandedNarratives[num].bgColor) {
+                el.style.backgroundColor = window.expandedNarratives[num].bgColor;
+                el.style.backgroundImage = 'none'; // Ensure texture doesn't override
+              }
 
-            let frameContent = imgTags;
-            let customFrameClass = "";
+              let imgTags = chunk.map(src => `<img src="${src}">`).join('');
+              if (chunk.length === 0) imgTags = `<div style="background: #222; width: 100%; height: 100%;"></div>`;
 
-            if (num === "11") {
-              frameContent = `<div class="triangle-container">${imgTags}</div>`;
-            } else if (title.includes("The Boat & The Water")) {
-              customFrameClass = "boat-section";
-            }
+              let frameContent = imgTags;
+              let customFrameClass = "";
 
-            el.innerHTML = `
+              if (num === "11") {
+                frameContent = `<div class="triangle-container">${imgTags}</div>`;
+              } else if (title.includes("The Boat & The Water")) {
+                customFrameClass = "boat-section";
+              }
+
+              el.innerHTML = `
               <div class="visual-frame ${customFrameClass}">
                 ${frameContent}
               </div>
@@ -880,16 +925,16 @@
                 <div class="info-section">${story}</div>
               </div>
             `;
-            stage.appendChild(el);
-            slides.push({ ch: chData.label, type: 'content' });
-          }
+              stage.appendChild(el);
+              slides.push({ ch: chData.label, type: 'content' });
+            }
+          });
         });
-      });
-      update();
-    } catch (err) {
-      console.error("Slideshow init error:", err);
+        update();
+      } catch (err) {
+        console.error("Slideshow init error:", err);
+      }
     }
-  }
 
     function update() {
       if (!slides || slides.length === 0 || !slides[cur]) return;
